@@ -3,6 +3,15 @@
 
 Use Scoring.
 
+Section -- Joint
+
+Joint Space is a room. "This is between everyone's rooms. EAST for Charles, NORTH for Nick's, SOUTHWEST for Aki, SOUTH for Emma, and WEST for Collin's.". 
+Joint Space is west from Henry Administration Building Enrance.
+Joint Space is south from Illini Union Bookstore.
+Joint Space is northeast from Altgeld Hall Interior.
+Joint Space is north from English Building Entrance.
+Joint Space is east from Lincoln Hall Entrance.
+
 SECTION -- Charles
 
 Henry Administration Building Entrance is a room. “[if unvisited] As you open the door and walk through the entrance hall, you would feel peace and calm separated from the Illini Terminal’s crowd outside. Then you are faced with 3-separated walkways; there are front, west wing and east wing. As you are facing a room of University Student Financial Services & Cashier Operation, you notice, there are two students wandering around finding their classes. It seems to be a tough first day of school for some freshmen.”
