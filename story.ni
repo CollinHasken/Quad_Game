@@ -1,12 +1,15 @@
-"Quad Game" by Group West
-   
+"Quad Game" by Group  West
+
 
 Use Scoring.
 
-SECTION -- Charless
+SECTION -- Charles
 
 Henry Administration Building Entrance is a room. “[if unvisited] As you open the door and walk through the entrance hall, you would feel peace and calm separated from the Illini Terminal’s crowd outside. Then you are faced with 3-separated walkways; there are front, west wing and east wing. As you are facing a room of University Student Financial Services & Cashier Operation, you notice, there are two students wandering around finding their classes. It seems to be a tough first day of school for some freshmen.”
-University Student Financial Services & Cashier Operation is north of Henry Administration Building Entrance. “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile. You may want to think of another time visiting this place, maybe not on the first day of semester.”
+University Student Financial Services & Cashier Operation is a room.
+University Student Financial Services & Cashier Operation is north of Henry Administration Building Entrance. 
+The description of University Student Financial Services & Cashier Operation is “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile. You may want to think of another time visiting this place, maybe not on the first day of semester.”
+
 West Wing is west of Henry Administration Building Entrance. “It is 10:50 and people are rushing out and in between classes, as some of them have to get into another class. You would have love the enthusiasm showed on the first day, a fresh start of the semester!”
 East Wing is east of Henry Administration east of Henry Administration Building Entrance. “More and more classes are located in this square-shaped building. It seems to be an efficient building for classes. The building doesn’t take a lot of spaces and still can manage to create many decent-sized rooms. People are sitting through the hall waiting for their turn getting into the classrooms. [if wet paint is appealing]Watchout![else]The East Wing is crowded with many students waiting for classes. You should be careful of wet paint and evil mopping boy. You can also EXIT the building from here.".
  
@@ -119,16 +122,6 @@ some therapy dogs are in the HAB123 class.
 The description of therapy dogs is “The dogs are caring and giving enough affection to the students.”
  
 Understand “dogs” and “dog” and “therapy” as therapy dogs.
- 
-Talking to is an action applying to one visible thing. Understand "talk to [something]" as talking to.
- 
-Check talking to [something]:
-	if noun is not a person:
-		say "Who are you talking to? Did you get enough sleep last night?";
-		stop the action.
-   
-Carry out talking to:
-		say “You greet [noun] and he remembers you! That is fantastic!”
   
 Instead of talking to security guard:
 		say “George has to go now, he hasn’t ate anything yet today.”
@@ -402,7 +395,8 @@ English Vending machine is scenery.
 
 Understand "Vending machine" as English vending machine.
  
-Desks is a supporter in the Classrooms. The description of the desks is "The desk seems to be vacant from the last class. All of the previous occupant's belongings are gone, but there is a bag on the surface."
+English Desks is a supporter in the Classrooms. The description of the English desks is "The desk seems to be vacant from the last class. All of the previous occupant's belongings are gone, but there is a bag on the surface."
+Understand "desks" as english desks.
   
 Bag is a closed openable container in the Classrooms. The bag is scenery.
 The description of the bag is "The bag feels like there are two things inside of it."
@@ -441,7 +435,7 @@ Instead of eating the candy:
 	say "Ah, that certainly hit the spot. You've never had a candy that tasted like ink before! Though, what's that empty feeling growing in your stomach? Ah. It must be the wind or something else clichéd."
 	Now the candy is nowhere.
 	  
-Instead of taking the students:
+Instead of taking the English students:
 	say "How rude that you'd interrupt a hard working student! Leave them be, they're stressed enough as it is!"
 	  
 Instead of examining English vending machine:
@@ -487,9 +481,10 @@ teacher is a person in classrooms. "The teacher is writing something down about 
  
 understand "man" as teacher.
  
-students are people. 
-students are people in the English basement. 
-The description of students is "Testing is in full swing. They seem to be bogged down by the stresses of life itself and their eyes seem lifeless."
+English students are people. 
+English students are people in the English basement. 
+The description of English students is "Testing is in full swing. They seem to be bogged down by the stresses of life itself and their eyes seem lifeless."
+Understand "students" as English students.
  
 a ghost is an animal in the bathroom. 
 The description of the ghost is "A mysterious figure floats menacingly. It looks at you with a terrifying glare. If you could breathe before, all the air is gone from your lungs at the sight."
@@ -509,7 +504,7 @@ Carry out talking to:
 Instead of talking to teacher:
 	say "The teacher is furiously writing down notes for his next class. Who knew there was enough demand for a class on ghosts? Maybe if you asked a specific question, he could give you a solid answer?"
  
-Instead of talking to students:
+Instead of talking to English students:
 	say "They're busy studying. How would you like it if someone bothered you while studying? One dismissively grumbles about the 'stupid teacher who talks about ghosts'."
  
 Instead of talking to [something]:
@@ -564,195 +559,7 @@ Instead of WeaponAttacking:
 	else:
 		say "You swing the [second noun] at the [noun] but nothing happened.";
 		stop the action.
-The English Building Entrance is a room. "[If unvisited]Entering the English Building, you feel the age of the rooms and halls before you. The scent of old papers and leftover ink permeates your entire being and you examine your options. [end if] Standing in the entrance, you can either go OUT to the Main Quad, to the Basement by going DOWN, UP to the Advising Office, or WEST to the Classrooms."
-  
-Basement is down from the English Building Entrance. "[If unvisited] The basement stretches out before you. Students gather in the central area, studying or eating. Everyone seems rather busy. An abandoned soda bottle sits on one of the tables. Vending machines stand near the bathrooms. You sense a foreboding presence. You feel like you can't breathe, but you can't seem to place why. [end if] Standing in the center of the basement, you can go NORTH to the Bathrooms or UP to the English Building Entrance. "
-  
-Bathroom is north from the Basement. "[if unvisited] The foreboding feeling that greeted you as you descended into the basement grows stronger as you go into the bathroom. [end if] There's a filthy light switch to your right. A strange figure floats in near a wall. The struggle to breathe continues to oppress you. You should probably go back SOUTH to the Basement."
-  
-Classrooms is west of the English Building Entrance. "[If unvisited] The bell rings, feeling louder than a normal bell. Students mill out of the room and you enter. [end if] A teacher is writing something on the chalkboard. Desks are scattered about after a class. There doesn't seem to be much else in here. You can go EAST to the English Building Entrance."
-  
-Advising Office is up from the English Building Entrance. "[if unvisited] Walking in, you can see comfy seats and candy open for everyone who enters. [end if] There's three offices, but the doors are all closed. You can go DOWN to the English Building Entrance."
-  
-SECTION -- Going Nowhere 
-  
-Instead of going nowhere when the player is in the Bathroom:
-	say "The longer you stay in this bathroom, the less air you feel entering your lungs. Your vision begins to blur. You shouldn't stay in here much longer."
-	  
-Instead of going nowhere when the player is in the Advising Office:
-	say "All of the advisors seem to be busy at the moment. Maybe you should make an appointment and come back later."
-	  
-Instead of going nowhere when the player is in the Classrooms:
-	say "Another class is supposed to come in soon. You should probably leave."
-	  
-SECTION -- Items
-  
-Old papers is a thing in the English Building Entrance. The description of Old papers is "They seem to talk about the history of the building. Most of the words are faded, but 'ghosts' and 'drown' are visible."
- 
-Vending machine is a supporter in the Basement. The description of vending machine is "The vending machine that was once full of candy now only has an old key residing within. It'll take a quarter to get it."
-  
-Vending machine is scenery.
- 
-Desks is a supporter in the Classrooms. The description of the desks is "The desk seems to be vacant from the last class. All of the previous occupant's belongings are gone, but there is a bag on the surface."
-  
-Bag is a closed openable container in the Classrooms. The bag is scenery.
-The description of the bag is "The bag feels like there are two things inside of it."
-  
-quarter is a thing in the bag. 
-The description of quarter is "Just a regular old quarter. Maybe you can use it in the vending machine?"
-  
-necklace is a wearable thing in the bag.
-The description of necklace is "The necklace within the bag is old, the gold tarnished. There's a large gemstone attached to the necklace."
-  
-candy is an edible thing in the Advising Office. The description of candy is "The candy looks sweet and satisfying. You got the last piece of in-date candy in the bowl."
-  
-light switch is a device in the Bathroom. 
-  
-The description of the light switch is "This switch looks ancient, like something out of a horror movie. There's film on it that sticks to your hands."
-  
-light switch is scenery. 
-  
-Understand "switch" as light switch. 
- 
-SECTION -- Default responses
-  
-Instead of eating the necklace:
-	say "That would certainly make for an embarrassing trip to the hospital. Best not to eat the chain."
-	  
-Instead of eating the old papers:
-	say "That doesn't seem as though it'd digest very well. Perhaps you should just TAKE them."
-	  
-Instead of switching on light switch: 
-	say "As you flip the gross switch into the On position, the lights flicker nonstop, creating a strobe light effect, like the world's smelliest dance club."
-  
-Instead of switching off light switch:
-	say "You've had enough of this groovy laser light show. You can't allow anyone else succumb to the boogie fever. Turn it off!"
-	  
-Instead of eating the candy:
-	say "Ah, that certainly hit the spot. You've never had a candy that tasted like ink before! Though, what's that empty feeling growing in your stomach? Ah. It must be the wind or something else clichéd."
-	Now the candy is nowhere.
-	  
-Instead of taking the students:
-	say "How rude that you'd interrupt a hard working student! Leave them be, they're stressed enough as it is!"
-	  
-Instead of examining vending machine:
-	if player has quarter: 
-		say "Huzzah, a key came out of the vending machine! Too bad they're out of actual food.";       
-	else:
-		say "Huh. Turns out you need money to buy things. Maybe you should look for a quarter or something."
- 
-Instead of drinking the candy:
-	say "I know the candy's been sitting out for a while, but that certainly doesn't mean it's been liquified. Why not EAT it instead?"
- 
-Instead of taking the vending machine:
-	say "Look, I know you think you're really strong and all, but this thing is bolted to the ground, pal. It ain't budging."
-	 
-Section -- Actions
- 
-Understand "sip [something]" as drinking. 
- 
-Understand "chucking [something]" as throwing it at. 
- 
-Understand "steal [something]" as taking
- 
-A thing can be untakeable or takeable.
-Vending machine is untakeable. 
- 
-Check taking:
-	if noun is untakeable: 
-		say "You're rather self-entitled, aren't you? You can't just go around stealing other people's things, you monster."
-				 
-Section -- New Actions
- 
-Contra is an action applying to nothing. 
- 
-Understand "Contra Code" and "up up down down left right left right B A start" as Contra.
- 
-Carry out Contra:
-	say "You feel your lifeforce extend further than you ever thought possible. You feel stronger, lighter, but... Thinner... Like butter spread over too much bread, like you're fading away... Maybe immortality isn't all it's cracked up to be.";
-		end the story.
-		 
-Section -- People
- 
-teacher is a person in classrooms. "The teacher is writing something down about ghost stories. He seems open for questions."
- 
-understand "man" as teacher.
- 
-students are people. 
-students are people in the basement. 
-The description of students is "Testing is in full swing. They seem to be bogged down by the stresses of life itself and their eyes seem lifeless."
- 
-a ghost is an animal in the bathroom. 
-The description of the ghost is "A mysterious figure floats menacingly. It looks at you with a terrifying glare. If you could breathe before, all the air is gone from your lungs at the sight."
- 
-understand "figure" and "floaty thing" as ghost.
- 
-Talking to is an action applying to one visible thing. Understand "talk with [something]" and "talk to [something]" as talking to.
- 
-Check talking to [something]: 
-	if noun is not a person:
-		say "You really want to try to talk to that? Well, you talk its non-existent ears off, that's for sure.";
-		stop the action. 
-		 
-Carry out talking to: 
-	say "There's nothing really much to talk about. They at least nod along even though they don't seem to care."
-	 
-Instead of talking to teacher:
-	say "The teacher is furiously writing down notes for his next class. Who knew there was enough demand for a class on ghosts? Maybe if you asked a specific question, he could give you a solid answer?"
- 
-Instead of talking to students:
-	say "They're busy studying. How would you like it if someone bothered you while studying? One dismissively grumbles about the 'stupid teacher who talks about ghosts'."
- 
-Instead of talking to [something]:
-	say "You talk and talk for a while, but somehow, its non-existent ears don't hear you. How strange. Best leave it alone."
-	 
-Instead of asking teacher about "weapon":
-	say "He looks at you with a frown, and says 'No weapons are allowed on campus, you silly person.'"
- 
-Instead of asking teacher about "winning":
-	say "He laughs and says 'No one wins in the game of life. You just keep playing till you run out of lives.' How morose..."
- 
-Instead of asking teacher about "hint":
-	say "The teacher smiles, nostalgia twinkling in his eye. and says 'I used to win all the time... Ah what was that code I used to use? Contra, I believe.'"     
- 
-Instead of asking teacher about "ghost":
-	say "The teacher's face falls. 'Oh god... She's back.' He holds the chalk in a shaky hand. 'Be wary, child. That ghost is not what she seems.'"
-	 
-Instead of giving Old papers to teacher:
-	say "The teacher looks at the papers and marvels at the page. 'Oh, I remember this page. It was from an old ghost story I used to read all of the time. Keep it, you might like to find the rest of the story!' You should probably listen to him.";
-	stop the action. 
- 
-		 
-Instead of giving candy to teacher: 
-	say "He shakes his head. 'No thanks, I don't want that inexplicably regenerating candy. Something about that gives me the creeps, like the god that rules over this building has yet to figure out how eating candy works.' Maybe you should keep it until you figure out how it disappears.";
-	stop the action.
-	 
-Instead of giving quarter to teacher:
-	say "'Oh, no thank you,' he says. 'I think you could find more use out of that with the vending machine downstairs.'";
-	stop the action.
- 
-Instead of attacking teacher: 
-	say "He counters your attack with a sidestep and a hit of a chalkboard eraser. 'Try something like that again, and you'll regret it.' He seems serious. You should leave him be.";
-	stop the action.
-	 
-Instead of attacking a ghost:
-		say "It floats menacingly, and doesn't seem phased. It almost smiles. You feel your throat constrict. The only feasible action would be to run for your life!";
-		stop the action.
-		 
-Instead of attacking something: 
-	say "The [noun] doesn't seem to be affected by that weak-sauce move. Nice try, though."
- 
-WeaponAttacking is an action applying to two visible things. 
- 
-Understand "attack [someone] with [something]" and "hack [someone] with [something]" as WeaponAttacking. 
- 
-Instead of WeaponAttacking:
-	if the noun is ghost:
-		say "The ghost's eerie smile grows, almost stretching past it's visible face. It won't let you hit it.";
-	else if the noun is teacher:
-		say "He counters the [second noun] with a piece of chalk. 'En guarde!' he shouts. You fought valiantly, but it was all for naught, you've been bested";
-		stop the action.
-		
+
 SECTION -- Aki
 
 SECTION -- ROOMS
@@ -761,21 +568,21 @@ Altgeld Hall Interior is a room. "[if unvisited]As soon as you enter the buildin
  
 First Floor is down from Altgeld Hall Interior. "[if unvisited]You arrive downstairs. [end if] Here you can see a drink vending machine. There are two hallways to the east and west - possibly more you cannot see because the structure of the building is just plain weird."
  
-Second Floor is up from Altgeld Hall Interior. "[if unvisited]The short flight of stairs brings you in front of the Math Library, on the second floor. [end if]A corridor stretches to the EAST. The library is to the SOUTH. The third floor (or at least part of it) is UP."
+Altgeld Second Floor is up from Altgeld Hall Interior. "[if unvisited]The short flight of stairs brings you in front of the Math Library, on the second floor. [end if]A corridor stretches to the EAST. The library is to the SOUTH. The third floor (or at least part of it) is UP."
  
-Math Library Lobby is south from Second Floor. "The lobby feels quite eery, unlike most other libraries on campus. The stacks are to the SOUTH and the computer area is to the WEST."
+Math Library Lobby is south from Altgeld Second Floor. "The lobby feels quite eery, unlike most other libraries on campus. The stacks are to the SOUTH and the computer area is to the WEST."
  
 Stacks is south of Math Library Lobby. "As expected, you find yourself surrounded by math books. Some of the titles make you dizzy just by looking at them. There is hardly any light in here. Perhaps Altgeld Hall was built with a theme in mind."
  
 Computer Area is west of Math Library Lobby. "You see a few students using the computers and a few more working at the tables, but nothing really interesting seems to be happening."
  
-Third Floor is up from Second Floor. "You can see classrooms clustered around the square hallway, with a view of the math library lobby in the middle. In the corner you can see a pamphlet display. There is also a lounge to the NORTH."
+Third Floor is up from Altgeld Second Floor. "You can see classrooms clustered around the square hallway, with a view of the math library lobby in the middle. In the corner you can see a pamphlet display. There is also a lounge to the NORTH."
  
 Lounge is north of Third Floor. "There are several sofa chairs here that remind you of the dorms, with a fridge on one side. There are currently no students here."
  
 SECTION -- GOING
  
-Instead of going inside when player is in Second Floor:
+Instead of going inside when player is in Altgeld Second Floor:
 	try going south;
 	stop the action.
  
@@ -788,7 +595,7 @@ Instead of going nowhere when player is in Math Library Lobby:
 Instead of going nowhere when player is in First Floor:
 	say "There is nothing in that direction but a solid gray wall.".
 	 
-Instead of going nowhere when player is in Second Floor:
+Instead of going nowhere when player is in Altgeld Second Floor:
 	say "The winding hallways of the second floor confuse you and you walk into a wall."
 	 
 Instead of going nowhere when player is in Stacks:
@@ -799,12 +606,12 @@ Instead of going nowhere when player is in Computer Area:
 	 
 SECTION -- OBJECTS
  
-Vending Machine is an open container in First Floor. Vending Machine is undescribed. Vending Machine is scenery. The description of vending machine is "It looks quite old and some of the paint is peeling off. From the machine, you can buy Cola, Diet Coke, Cherry Coke, Sprite, Lemonade, and Water.". Understand "machine" and "drink machine" as Vending Machine. 
+Altgeld Vending Machine is an open container in First Floor. Altgeld Vending Machine is undescribed. Altgeld Vending Machine is scenery. The description of Altgeld vending machine is "It looks quite old and some of the paint is peeling off. From the machine, you can buy Cola, Diet Coke, Cherry Coke, Sprite, Lemonade, and Water.". Understand "vending machine" and "machine" and "drink machine" as Altgeld Vending Machine. 
  
 A thing is either drinkable or undrinkable. A thing is usually undrinkable.
 Soda is a kind of thing. Soda is drinkable.
  
-Cola is a soda. Cola is in Vending Machine. Cola is undescribed. Instead of buying [soda]:
+Cola is a soda. Cola is in Altgeld Vending Machine. Cola is undescribed. Instead of buying [soda]:
 	say "You buy the [noun]. Bye bye money.";
 	now player has the noun.
 	 
@@ -822,15 +629,15 @@ Carry out drinking:
 		say "The [noun] quenched your thirst.";
 		now noun is nowhere.
 	 
-Sprite is a soda. Sprite is in Vending Machine. Sprite is undescribed. 
+Sprite is a soda. Sprite is in Altgeld Vending Machine. Sprite is undescribed. 
 	 
-Diet Coke is an undescribed soda in Vending Machine.
+Diet Coke is an undescribed soda in Altgeld Vending Machine.
 	 
-Cherry Coke is an undescribed soda in Vending Machine.
+Cherry Coke is an undescribed soda in Altgeld Vending Machine.
 	 
-Water is an undescribed soda in Vending Machine.
+Water is an undescribed soda in Altgeld Vending Machine.
 	 
-Lemonade is an undescribed soda in Vending Machine.
+Lemonade is an undescribed soda in Altgeld Vending Machine.
 	 
 Pamphlet display is a fixed in place supporter in Third Floor. Understand "display" as pamphlet display. Pamphlet display is undescribed. The description of pamphlet display is "It is a sort of shelf on which are various pamphlets and forms, including [list of things on pamphlet display].".
  
@@ -908,33 +715,23 @@ Carry out Origami:
 	say "You fold [the noun] into a beautiful butterfly and it flies out of your hand and out the window.";
 	now the noun is nowhere.
 	 
-Talking to is an action applying to one visible thing. Understand "talk to [something]" as talking to. 
-   
-Check talking to [something]:
-	if noun is not a person:
-		say "How about talking to something that can talk back?";
-		stop the action.
-   
-Carry out talking to:
-	 say "You chat away happily to the [noun] for a while, but you don't get a reply."
-	 
 SECTION -- CREATURES
  
-student is an undescribed person in Computer Area. Understand "students" as student. The description of student is "A student is sitting at one of the old wooden tables, nose-deep in a book, with a notebook open beside them. You cannot understand what the book says, but you assume it is math related. They have headphones on, signaling they do not want to talk to you."
+Altgeld student is an undescribed person in Computer Area. Understand "students" and "student" as Altgeld student. The description of Altgeld student is "A student is sitting at one of the old wooden tables, nose-deep in a book, with a notebook open beside them. You cannot understand what the book says, but you assume it is math related. They have headphones on, signaling they do not want to talk to you."
  
-Instead of giving something to student:
+Instead of giving something to Altgeld student:
 	say "The student is not interested in what you have to offer.";
 	stop the action.
 	 
-Instead of talking to student:
+Instead of talking to Altgeld student:
 	say "They cannot hear you.";
 	stop the action.
 	 
-Instead of asking student about something:
-	try talking to student;
+Instead of asking Altgeld student about something:
+	try talking to Altgeld student;
 	stop the action.
 	 
-Instead of attacking student:
+Instead of attacking Altgeld student:
 	say "It would do you no good to cause a ruckus in the library.";
 	stop the action.
  
@@ -979,10 +776,10 @@ Illini Union Bookstore is a room. "[if unvisited]You open the door and slip insi
 This place is usually filled with students, but it is entirely empty save for an older woman combing through the merchandise toward the west wall. She doesn't look too threatening.
 Whatever remains of the Starbucks lies to the EAST. Amazon@Illinois can be found at the wall to the WEST. You can head either UP or DOWN the open stairwell to the Second Floor and Basement respectively. You could also go back OUT to the Entrance to the Illini Union Bookstore."
    
-Second Floor is up from Illini Union Bookstore. "Sure enough, this part of the building is devoid of life, too. Many of the larger, hardcover books, normally found neatly lined along the shelves, are strewn about the floor. A few are missing pages if the haphazard tears and scrap paper are any indication.
+Bookstore Second Floor is up from Illini Union Bookstore. "Sure enough, this part of the building is devoid of life, too. Many of the larger, hardcover books, normally found neatly lined along the shelves, are strewn about the floor. A few are missing pages if the haphazard tears and scrap paper are any indication.
 There's not much else to see here, though. You can go back DOWN to the main floor."
    
-Basement is down from Illini Union Bookstore. "Small spatters of what look like blood, as well as even more claw marks, adorn the staircase winding down into the basement. It might not necessarily be dangerous to explore further, but it seems the basement lights have all been shut off, and the darkness is unnaturally intense despite the light of the first floor reaching the stairs.
+Bookstore Basement is down from Illini Union Bookstore. "Small spatters of what look like blood, as well as even more claw marks, adorn the staircase winding down into the basement. It might not necessarily be dangerous to explore further, but it seems the basement lights have all been shut off, and the darkness is unnaturally intense despite the light of the first floor reaching the stairs.
 Without a light, you can only head back UP for now."
    
 Ruins of Starbucks is east from the Illini Union Bookstore. "[if unvisited]You take a moment to remember the many cups of coffee and tea enjoyed here. What a waste.[end if] 
@@ -998,10 +795,10 @@ SECTION -- Going Nowhere
 Instead of going nowhere when the player is in Illini Union Bookstore: 
 say "It seems impossible to get lost in such an open space, but you wouldn't put it past yourself. Best to look at the signs and stick to places you know are in here."
    
-Instead of going nowhere when the player is in Second Floor: 
+Instead of going nowhere when the player is in Bookstore Second Floor: 
 say "All these ruined randomly ruined books are seriously giving you the creeps. Nobody appears to be up here with you, and none of the other sections look to be worth checking out. Maybe you should head back DOWN."
    
-Instead of going nowhere when the player is in Basement: 
+Instead of going nowhere when the player is in Bookstore Basement: 
 say "For some strange reason, it's just too dark to see anything past the foot of the stairs. You should walk back UP and find something to light the way."
    
 Instead of going nowhere when the player is in Amazon@Illinois: 
@@ -1117,9 +914,9 @@ Check examining lockers:
  
 SECTION -- Items
  
-A table is a supporter in the Ruins of Starbucks. "A single tall table somehow remains mostly untouched amidst the wreckage. Looks like there's some stuff still on it."
-The description of the table is "You look more closely at the table, expecting something equally as strange as whatever tore through here, but there's only a few used napkins, a wet straw, a nasty-looking sandwich, and a strange little pastry box.[if slice of coffee cake is in the preserved pastry box] The box gives off a sweet scent.[else] Unfortunately, you can't smell the coffee cake anymore."
-Understand "stand" as table.
+A Starbucks table is a supporter in the Ruins of Starbucks. "A single tall table somehow remains mostly untouched amidst the wreckage. Looks like there's some stuff still on it."
+The description of the Starbucks table is "You look more closely at the table, expecting something equally as strange as whatever tore through here, but there's only a few used napkins, a wet straw, a nasty-looking sandwich, and a strange little pastry box.[if slice of coffee cake is in the preserved pastry box] The box gives off a sweet scent.[else] Unfortunately, you can't smell the coffee cake anymore."
+Understand "stand" and "table" as Starbucks table.
    
 A preserved pastry box is a closed openable container on the table.
 The preserved pastry box is scenery. 
@@ -1217,7 +1014,7 @@ At the time when The Pile Falls:
 	now giant pile of unchecked packages is fallen; 
 	if player is in Amazon@Illinois:
 		end the story finally saying "You've discovered your doom beneath the countless online orders of a large university population. Maybe you should have kept away.";
-	if player is in Illini Union Bookstore or player is in Ruins of Starbucks or player is in Second Floor or player is in Basement: 
+	if player is in Illini Union Bookstore or player is in Ruins of Starbucks or player is in Bookstore Second Floor or player is in Bookstore Basement: 
 		say "You hear the pile of boxes near the lockers finally collapse. Good thing you weren't anywhere near 'em!";
  
 lockers are a cache in Amazon@Illinois.
@@ -1261,16 +1058,6 @@ Some ants are scenery animals.
 Some ants are in the Ruins of Starbucks. 
 The description of some ants is "A long line of ants trek from one side of the old stand to the other, carrying various crumbs and other bits."
 Understand "bugs" and "ant" as ants.
-   
-Talking to is an action applying to one visible thing. Understand "talk to [something]" as talking to. 
-	
-Check talking to [something]:
-	if noun is not a person:
-		say "Maybe you're finally losing it, talking to things which don't talk back.";
-		stop the action.
-	
-Carry out talking to:
-	 say "You trying talking with [noun] for a while, but the conversation goes nowhere."
    
 Instead of talking to Creepily Quiet Guy:
 	say "The tall, plain man is almost like a statue. He doesn't say anything back to you, and it barely looks like he's even breathing. Maybe ask him about something specific?"
@@ -1329,22 +1116,22 @@ Instead of attacking Little Old Lady:
    
 Instead of attacking something: 
 	say "Your feeble strikes don't accomplish much."
- 
+
 SECTION -- Collin
 
 SECTION -- Room Declarations
-	
-	
+   
+   
 Lincoln Hall Entrance is a room. "[if unvisited]As you walk into the entrance, an ominous aura hangs in the air. The room is devoid of any life, and yet you feel as though every move you make is being meticulously watched. Your eyes land upon a bust of Abraham Lincoln, his nose tarnished from students rubbing it in hopes for good luck. You think twice about rubbing it yourself when you notice the bust's eyes are following you. The cold, dead eyes give you feeling to get out of the building. There is a large grandfather clock near the stairs heading UP to the second floor, or hallways lined with classrooms going NORTH and SOUTH with vending machines.[else]The Lincoln bust is still perched near the grandfather clock on the staircase heading UP to the second floor, with its metallic eyes following you as you enter the room. You hear monotone professors lecturing students trying to stay awake in the classrooms through the empty hallway, except from a few vending machines, from both the NORTH and SOUTH directions. Your eyes drift towards the entrance doors heading out to the quad as you wonder why you'd waste your time outside of class."
-	
-	
+   
+   
 Lincoln Hall Second Floor Lobby is a room. 
- 
+
 The description of Lincoln Hall Second Floor Lobby is "[Lincoln Hall Second Floor Lobby Description]".
- 
+
 to say Lincoln Hall Second Floor Lobby Description:
 	if unvisited:
-		say "After sprinting up the stairwell past the bust, you see two doors to your NORTH and SOUTH.";        
+		say "After sprinting up the stairwell past the bust, you see two doors to your NORTH and SOUTH.";		
 		if turn count is less than 15:
 			say "Through the NORTH door, you can see a student sitting in what looks like a waiting room, though it seems like he's made it his home. His back is towards you, and you can see his laptop being charged while watching what looks like an episode of Game of Thrones and snacking on a bag of baked Lays chips. Through the SOUTH door you don't see anyone, and DOWN the stairs you can barely see the top of Lincoln's head. ";
 		else:
@@ -1354,208 +1141,208 @@ to say Lincoln Hall Second Floor Lobby Description:
 			say "After sprinting past Lincoln, you see the inattentive vegetable of a student in the waiting room to the NORTH and the empty room to the SOUTH as you stand at the top of the stairs that head back DOWN to the entrance.";
 		else:
 			say "After sprinting past Lincoln, you see the waiting rooms to the NORTH and South are empty as you stand at the top of the stairs that head back DOWN to the entrance.";
-	
-	
+   
+   
 Lincoln Hall Classroom is a room. "[if unvisited]After walking through the halls for minute, you come across a room with a piece of paper that clearly had trouble being ripped out of a spiral notebook. On this torn sheet, a lone 'L' is scrawled in the center, taking up most of what's left of the paper. The window shows the lights in the room are off. With your curiosity peaked, you test the handle, and to your surprise the door is unlocked. You're punched back by a horrific stench and slam the door before falling to your knees as you start to dry heave. After regaining your composure and a small pep talk, you decide to fill your lungs with as much clean air as you can hold, and reenter the room. You freeze in place, finding the source of the putrid smell. A dismembered body lays across the teacher's desk, it's legs poking out of a trash can sporting a pair of black Adidas shoes. A surgeon tray lays next to the body, holding a set of tools dripping with bright red blood. You realize you've focused solely on the body on the table and slowly look to other side of the room, when your eyes halt. You try to look away, but find your eyes no longer under your control. Your eyes are locked starring directly into the same cold, dead eyes that greeted you at the building entrance. You recognize the same pattern on its nose, ensuring it to be the same Abraham Lincoln bust that was in the lobby. A shiver runs down your spine, signaling to get OUT of this room.[else]You find the 'L' door, and after taking a few deep breaths, enter the room. You reacquaint yourself with the dismembered body laying next to the surgical tray. Automatically your eyes drift towards the Lincoln bust on the other side of the room and are locked in place. Without being able to see where to go, you can only get OUT of this room."
- 
+
 Lincoln Hall Second Floor Wait Room is a room. "As you step into the waiting room, the lights turn off and it becomes too dark to see. You are close enough to the door that you know you can go SOUTH to exit.".
- 
+
 After going south from Lincoln Hall Second Floor Wait Room:
 	say "As you leave, the lights turn back on.".
-	
-	
+   
+   
 SECTION -- Room Locations
-	
-	
+   
+   
 Lincoln Hall Entrance is outside of Lincoln Hall Classroom.
-	
+   
 Inside of Lincoln Hall Entrance is nowhere.
-	
+   
 Lincoln Hall Second Floor Lobby is up of Lincoln Hall Entrance.
- 
+
 Lincoln Hall Second Floor Wait Room is north of Lincoln Hall Second Floor Lobby.
-	
-	
+   
+   
 Lincoln Hall Classroom is south of Lincoln Hall Entrance.
-	
+   
 Lincoln Hall Classroom is north of Lincoln Hall Entrance.
-	
+   
 North of Lincoln Hall Classroom is nowhere.
-	
+   
 South of Lincoln Hall Classroom is nowhere.
-	
-	
+   
+   
 SECTION -- Directions
-	
-	
+   
+   
 Instead of going nowhere when the player is in Lincoln Hall Entrance:
 	say "You start heading that direction, but then are stopped by the glare from the bust, telling you to not go that way."
-	
+   
 Instead of going nowhere when the player is in Lincoln Hall Second Floor Lobby:
 	say "Now that the bust can't make eye contact, you think you can go any direction without its hindrance. You're mistaken, as there is a reflection of the bust that is making enough eye contact to prevent you from continuing in that direction."
-	
+   
 Before going north when the player is in Lincoln Hall Second Floor Lobby:
 	if OpenedDoor is false:
 		say "You try to open the door to the waiting room, but find its locked. Trying to get the attention of the student on his laptop, you bang on the door. No matter how long and loud you bang, you can't get his attention. Better try a different  direction.";
 		stop the action.
-	
+   
 Instead of going south when the player is in Lincoln Hall Second Floor Lobby:
 	say "You try the south door, but find its locked. Not being able to see anyone inside, you see no hope for entering."
-	
+   
 Instead of going nowhere when the player is in Lincoln Hall Classroom:
 	say "Your eyes are locked to looking at the bust. You can only find your way back OUT of the room."
-	
-	
-Section -- Properties
    
+   
+Section -- Properties
+  
 A thing can be shaveable or unshaveable. A thing is usually unshaveable.
- 
+
 A thing can be examined or unexamined. A thing is usually unexamined.
- 
+
 Carry out examining something:
 	now the noun is examined.
-	 
+	
 Section -- Types
- 
+
 A VendingMachine is a kind of thing. A VendingMachine can be Stocked or Empty. A VendingMachine is usually Empty.
- 
-   
+
+  
 SECTION -- Items
- 
+
 Lincoln Hall Grandfather Clock is a thing in LIncoln Hall Entrance.
- 
+
 The description of Lincoln Hall Grandfather Clock is "A large, old clock. It reads [time of day].".
- 
+
 Lincoln Hall Grandfather Clock is fixed in place.
- 
+
 Understand "Grandfather Clock" and "Clock" as Lincoln Hall Grandfather Clock.
- 
+
 Lincoln Hall Vending Machine is a scenery VendingMachine in Lincoln Hall Entrance. "[Vending Machine Description]".
 Lincoln Hall Vending Machine is Stocked.
 Understand "Vending Machine" and "Machine" as Lincoln Hall Vending Machine.
- 
+
 To say Vending Machine Description:
 	if Lincoln Hall Vending Machine is Stocked:
 		say "There are water bottles and different coke products.";
 		stop the action;
 	else:
 		say "Sadly, its out of stock.".
-	  
+	 
 Surgical tray is a supporter in Lincoln Hall Classroom. "[Surgical Tray Description]".
-	
+   
 The Surgical tray is undescribed.
-	
+   
 To say Surgical Tray Description:
 	if Surgical tray is unexamined:
 		say "An array of surgical equipment lay on top of the surgical tray, but you don't want to get a closer look at them. There is a small, brown box laying to the side of the tools.";
 		stop the action;
 	else:
 		say "The surgical equipment looks too complicated, maybe you should stick to looking at the box.".
-	
+   
 Understand "Tray" and "Surgeon Tray" as Surgical tray.
-	
+   
 Instead of taking Surgical tray:
 	say "There are too many things on top of the tray and you're too uncoordinated to try and balance them all.";
 	stop the action.
-	
-	
-Box is a closed, openable container on the Surgical tray in Lincoln Hall Classroom.
-	
-The Box is undescribed.
-	
-The description of Box is "A small, brown box. Its in pristine condition and has a small 'AL' inscribed in the bottom right corner.".
-	
-Understand "brown box" and "small box" and "small brown box" and "brown small box" as Box.
-	
-Box is fixed in place.
-	
-Instead of taking Box:
+   
+   
+Nose Box is a closed, openable container on the Surgical tray in Lincoln Hall Classroom.
+   
+The Nose Box is undescribed.
+   
+The description of Nose Box is "A small, brown box. Its in pristine condition and has a small 'AL' inscribed in the bottom right corner.".
+   
+Understand "brown box" and "small box" and "small brown box" and "brown small box" as Nose Box.
+   
+Nose Box is fixed in place.
+   
+Instead of taking Nose Box:
 	say "The box, although small, is too heavy for you to pick up. Maybe you should go to the ARC more.";
 	stop the action.
-	
-	
+   
+   
 Lincoln Beard is a wearable thing.
-	
+   
 The description of Lincoln Beard is "A magical beard that grew seconds after putting on the prosthetic nose.".
-	
+   
 Understand "beard" and "facial hair" as Lincoln Beard
-	
+   
 Instead of taking off the Lincoln Beard:
 	say "You can't take hair off. You need to find a razor to shave with.";
 	stop the action.
-   
+  
 Lincoln Beard is shaveable.
-   
-   
+  
+  
 Razor is a thing in the Box.
-   
+  
 The description of Razor is "A straight edge razor. It looks very old but the blade is still sharp.".
-   
-   
+  
+  
 Shaving Cream is a thing in the Box.
-   
+  
 The description of Shaving Cream is "A tube of shaving cream, stating how smooth and buttery your shave will be.".
-   
+  
 Understand "cream" as Shaving Cream.
-	
-	
+   
+   
 Prosthetic Nose is a wearable thing in the Box.
-	
+   
 The description of Prosthetic Nose is "A fake, prosthetic nose. It has a bronze shine to it and smells like freshly cut wood.".
-	
+   
 Understand "nose" as Prosthetic Nose.
-	
+   
 Instead of eating Prosthetic Nose:
 	say "You take a small nibble and instantly regret it. ";
 	stop the action.
-		
+	   
 Instead of taking Prosthetic Nose:
 	say "You take the nose, somehow thinking it could come in handy.";
 	Now the player holds the prosthetic nose.
-		
+	   
 Instead of wearing Prosthetic Nose:
 	say "As you put on the nose, a tingling sensation builds on your face. In mere seconds a full, profound beard emerges on your once bald face.";
 	now the player is wearing Lincoln Beard;
 	now the player is wearing Prosthetic Nose.
-		
+	   
 Instead of taking off Prosthetic Nose:
 	say "The nose has become glued onto your face.";
 	stop the action.
-		
-	
+	   
+   
 Potato Chip is in Lincoln Hall Second Floor Lobby. "A lone potato chip lays on the ground.".
-	
+   
 The description of Potato Chip is "It looks like the student dropped a chip on his way into the waiting room.".
-	
+   
 Understand "chip" and "lays chip" and "lays potato chip" as Potato Chip.
-	
+   
 Potato Chip is edible.
-	
+   
 Instead of eating Potato Chip:
 	say "After giving the chip a couple puffs of air to remove excess dirt, you toss it in your mouth.";
 	Now the Potato Chip is nowhere.
-	
-	
+   
+   
 Dismembered Corpse is scenery in Lincoln Hall Classroom."A dismembered body lays across the teacher's desk, it's legs poking out of a trash can sporting a pair of black Adidas shoes. You try not to look at its face in fear that you might know the victim.".
-	
+   
 Understand "corpse" and "body" and "dead body" and "legs" and "trash can" and "trash" and "can" and "shoes" and "Adidas" and "dismembered body" as Dismembered Corpse.
-	
+   
 Instead of taking Dismembered Corpse:
 	say "You can barely stomach looking at the body, let alone grabbing it.";
 	stop the action.
-	  
-  
+	 
+ 
 Lincoln Hall Second Floor Lobby Door is a thing in Lincoln Hall Second Floor Lobby.
-  
+ 
 Lincoln Hall Second Floor Lobby Door is scenery.
-  
+ 
 Understand "door" as Lincoln Hall Second Floor Lobby Door.
-   
+  
 Section -- Verbs
-   
+  
 Understand "flip [something] on" and "toggle [something] on" as switching on.
 Understand "flip [something] off" and "toggle [something] off" as switching off.
-   
+  
 Understand "shave [something]" as Shaving.
 Shaving is an action applying to one visible thing.
 Check Shaving:
@@ -1575,7 +1362,7 @@ Instead of shaving the Lincoln Beard:
 		say "You slowly and carefully shaved your face back to its smooth self.";
 		remove Lincoln Beard from play;
 		remove Shaving Cream from play.
-		   
+		  
 Understand "apply [something]" as Applying.
 Applying is an action applying to one visible thing.
 Carry out Applying:
@@ -1586,93 +1373,79 @@ Instead of applying the Shaving Cream:
 		stop the action;
 	say "You put some shaving cream on your beard, ready to be shaved.";
 	Now the player is wearing Shaving Cream;
-	  
-Talking to is an action applying to one visible thing.
-Understand "talk to [someone]" and "talk to [something]" as talking to.
-Check talking to [something]:
-	if noun is not a person:
-		say "You attempt to have a conversation with the [noun]. Perhaps you should talk to someone who can talk back?";
-		stop the action.
-Carry out talking to:
-	say "You chat away to [noun] for a while, but you don't get a reply."
-	  
+	 
 The block attacking rule is not listed in the check attacking rulebook.
 Check attacking:
 	if the noun is not a person:
 		say "You give the [noun] a good whack, but it didn't change anything about it."
 Carry out attacking:
 	say "You wind up your punch, but then [noun] notices you so you play it off as stretching."
-	  
-WeaponAttacking is an action applying to two visible things.
-Understand "attack [something] with [something]" as WeaponAttacking.
-Instead of WeaponAttacking:
-	say "You swing the [second noun] at the [noun] but nothing happened."
-	  
+	 
 Section -- People
-  
+ 
 Lincoln Hall Students are people in the Lincoln Hall Entrance. Students are scenery.
-  
+ 
 The description of lincoln hall students is "A couple students are standing around, looking at their phones. Others are passing through the hallways, heading to class.".
-  
+ 
 Understand "couple students" and "students" as lincoln hall students.
-  
+ 
 Instead of talking to lincoln hall students:
 	say "You try to talk to a few students, but they don't look up from their phones.".
-	  
+	 
 Instead of asking lincoln hall students about something:
 	say "You ask, but just get a blank expression. The students don't seem helpful in the slightest.".
-	   
+	  
 Instead of giving something to lincoln hall students:
 	say "You think about handing it over, but then realize you might have a better use for it.".
-	  
+	 
 Instead of giving potato chip to lincoln hall students:
 	say "The chip looks too delicious to just give away.".
-	  
+	 
 Instead of attacking lincoln hall students:
 	say "You start to charge a group of students, but they scatter before you can reach them.";
 	stop the action.
-  
-  
+ 
+ 
 Lincoln Hall inattentive student is a person in the Lincoln Hall Second Floor Lobby.
-  
+ 
 The description of lincoln hall inattentive student is "He's too busy watching his show to notice you. He has [a list of things carried by lincoln hall inattentive student].".
+
+lincoln hall inattentive student is carrying a Lincoln Hall headphone.
+The description of a Lincoln Hall headphone is "They look worn from repeated use.".
+
+lincoln hall inattentive student is carrying a Lincoln Hall laptop.
+The description of a Lincoln Hall laptop is "It has chips all around the edges. You can see it playing an episode of Game of Thrones.".
+
+lincoln hall inattentive student is carrying Lincoln Hall lays chips.
+The description of Lincoln Hall lays chips is "It seems like he never runs out.".
  
-lincoln hall inattentive student is carrying a headphone.
-The description of a headphone is "They look worn from repeated use.".
- 
-lincoln hall inattentive student is carrying a laptop.
-The description of a laptop is "It has chips all around the edges. You can see it playing an episode of Game of Thrones.".
- 
-lincoln hall inattentive student is carrying lays chips.
-The description of lays chips is "It seems like he never runs out.".
-  
 Understand "student" and "inattentive student" as lincoln hall inattentive student.
-  
+ 
 Instead of talking to lincoln hall inattentive student:
 	say "You try talking to him, but he can't hear you through the door and headphones.".
-	  
+	 
 Instead of asking lincoln hall inattentive student about something:
 	say "You yell your question to him, but he can't hear you.".
-	  
+	 
 Instead of giving something to lincoln hall inattentive student:
 	say "You try giving him the [noun], but you can't push it through the door.".
-	  
+	 
 Instead of attacking lincoln hall inattentive student:
 	say "You try to hit him with [noun], but instead hit the door."
-	  
-  
+	 
+ 
 Lincoln bust is a person in Lincoln Hall Entrance.
-	
+   
 The description of Lincoln bust is  "A bust of Abraham Lincoln sits upon a pedestal a few steps up the center staircase. Its eyes, staring directly at you as walk closer to get a better look.[if the player is wearing the Lincoln Beard] Recognizing such a fantastical beard, the bust seems open to talking.".
-	
+   
 Understand "Lincoln" and "bust" and "Abraham" and "Abraham Lincoln" and "Abraham bust" and "Abraham Lincoln bust" and "Abraham's bust" and "Abraham Lincoln's bust" and "Lincoln's bust" as Lincoln bust.
-	
+   
 Instead of talking to Lincoln bust:
 	if the player is wearing the Lincoln Beard:
 		say "Now that you're wearing a beard, you can ask me about opening the locked door.";
 	else:
 		say "The bust doesn't want to talk with you.".
-		  
+		 
 Instead of asking Lincoln bust about something:
 	if the player is wearing the Lincoln Beard:
 		if something is Lincoln Hall Second Floor Lobby Door:
@@ -1680,31 +1453,31 @@ Instead of asking Lincoln bust about something:
 			Now OpenedDoor is true;
 			stop the action;
 	say "He doesn't want to talk.".
-	  
+	 
 Instead of giving something to Lincoln bust:
 	say "How would he hold it?".
-	  
+	 
 Instead of attacking Lincoln bust:
 	say "You are about to attack him, but his eyes make you stop.".
-	 
- 
+	
+
 Section -- Variables
- 
+
 GrownBeard is a truth state variable. GrownBeard is false.
- 
+
 OpenedDoor is a truth state variable. OpenedDoor is false.
- 
+
 ClockCount is a number variable. ClockCount is 0.
- 
+
 Section -- Scoring
- 
+
 Before putting on Lincoln Beard:
 	if GrownBeard is false:
 		increase score by 10;
 		now GrownBeard is true.
-		 
+		
 Section -- Every turn
- 
+
 Every turn:
 	if the time of day is 12:00 am:
 		Now ClockCount is 12;
@@ -1778,8 +1551,9 @@ Every turn:
 	otherwise if the time of day is 11:00 pm:
 		Now ClockCount is 11;
 		Ring the clock.
-		 
+		
 to ring the clock:
 	repeat with x running from 1 to ClockCount - 1:
 		say "Dong, ";
 	say "Dong".
+		
