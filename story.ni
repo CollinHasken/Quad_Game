@@ -1,7 +1,373 @@
-"Assignment 1" by Collin
+"Quad Game" by Group West
    
 
 Use Scoring.
+
+SECTION -- Charless
+
+Henry Administration Building Entrance is a room. “[if unvisited] As you open the door and walk through the entrance hall, you would feel peace and calm separated from the Illini Terminal’s crowd outside. Then you are faced with 3-separated walkways; there are front, west wing and east wing. As you are facing a room of University Student Financial Services & Cashier Operation, you notice, there are two students wandering around finding their classes. It seems to be a tough first day of school for some freshmen.”
+University Student Financial Services & Cashier Operation is north of Henry Administration Building Entrance. “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile. You may want to think of another time visiting this place, maybe not on the first day of semester.”
+West Wing is west of Henry Administration Building Entrance. “It is 10:50 and people are rushing out and in between classes, as some of them have to get into another class. You would have love the enthusiasm showed on the first day, a fresh start of the semester!”
+East Wing is east of Henry Administration east of Henry Administration Building Entrance. “More and more classes are located in this square-shaped building. It seems to be an efficient building for classes. The building doesn’t take a lot of spaces and still can manage to create many decent-sized rooms. People are sitting through the hall waiting for their turn getting into the classrooms. [if wet paint is appealing]Watchout![else]The East Wing is crowded with many students waiting for classes. You should be careful of wet paint and evil mopping boy. You can also EXIT the building from here.".
+ 
+SECTION -- Going Nowhere
+ 
+Instead of going nowhere when the player is in Henry Administration Building Entrance:
+say “If you are looking for classes, you may not want to go straight. You should go WEST or EAST wing. There are where the classes are located.”
+Instead of going nowhere when the player is in University Student Financial Services & Cashier Operation:
+say “You shouldn’t be here if you don’t have any financial consultation or payments to be made. You are just making it worse! You probably should go EAST or WEST to the wings.”
+Instead of going nowhere when the player is in West Wing:
+say “Since there are a lot of people rushing in and out, you might want to stand aside and wait until everything cools down. Try to listen to music or drink some water, you want to stay hydrated! You can always explore the building by going NORTH.”
+Instead of going nowhere when the player is in East Wing:
+say “Look for people who are leaving their chairs and grab one of those. Your legs are tired and you need a rest of a minute or two. But don’t forget to get into your class when the time comes. You can always explore the building by going NORTH.”
+ 
+SECTION -- THINGS
+ 
+Wooden desks are scenery in the University Student Financial Services & Cashier Operation.
+The description of the wooden desks is "The desks stand out the most as you are facing it most of the time when you are in line These desks are placed next to the long line of people. Every financial consultant would use these desks when serving the students."
+Understand “desk” and “desks” as Wooden desks.
+A computer is a device in the University Student Financial Services & Cashier Operation. “The sound of keyboard typing and the bright lights from computer’s monitor fill the atmosphere”.
+The computer is fixed in place.
+The description of the computer is “Computer is an essential device for one’s office. It may seem too common device but you would feel their presence when they are not around. So, don’t ever think to omit the presence of computer.”
+Understand “device” and “comp” and “computers” as computer.
+Hanging chairs are supporter in the East Wing. “There are several hanging chairs along the hall where you can use when waiting for a class.”
+The description of the Hanging Chairs is “You would want to consider taking a seat in this comfortable chair while waiting for your class.”
+Understand “chair” and “chairs” as Hanging chairs.
+A trash bin is a container in the West Wing.
+The trash bin is scenery.
+The description of the trash bin is “It is the most useful container as it prevents the hall from all trashes.”
+Understand “bin” and “trash can” as trash bin.
+Candies are edible thing in the University Student Financial Services & Cashier Operation.
+The description of Candies is “You can take some candies while waiting in line for consultation. Don’t mind your diet, you deserve it!”
+Understand “candy” and “sweets” as candies.
+The player is wearing an orange U of I t-shirt.
+The description of orange U of I t-shirt is “You are wearing this orange U of I t-shirt to show your pride being an Illini!”
+ 
+Section -- INTERACTION
+ 
+Instead of taking wooden desks:
+Say “You would not take those super heavy desks, leave that!”;
+Stop the action.
+Instead of eating wooden desks:
+Say “You have eaten one of those once and it wasn’t good. You don’t want to     do the same thing”;
+Stop the action.
+Instead of examining computer:
+Say “[if switched off] Go turn on that computer, they would absolutely love     your enthusiasm. [else] You don’t want to take any random actions without   further consideration. It is not your responsibility.”.
+Instead of taking computer:
+Say “Those are not yours! Put it back immediately!”;
+Stop the action.
+Instead of taking hanging chairs:
+Say “Those chairs are too big and you are not strong enough to carry it!”;
+Stop the action.
+Instead of switching on trash bin:
+Say “Please make sure you are not throwing your personal belongings.”;
+Now trash bin is switched on.
+Instead of switching off trash bin:
+Say “Someone behind you may have something to throw, don’t close it!”;
+Stop the action.
+Instead of eating candies:
+Say “You are hungry and these sweets can fill you stomach a bit”;
+Now candies is nowhere.
+Instead of taking U of I t-shirt:
+Say “Those are someone else’s t-shirt, don’t steal!”;
+Stop the action. 
+ 
+Section -- Actions
+ 
+Understand “feeling [something]” and “rubbing [something]” as touching.
+Understand “thrust [something]” and “forcing [something]” as pushing.
+An object can be clean or dirty.
+A trash bin is dirty.
+Check touching:
+	if noun is dirty:
+		say “Don’t you dare to touch them, they are not hygienics”; 
+	stop the action.
+Carry out touching:
+	if noun is clean:
+		say “You can touch and hold them, they are safe for health”;
+Instead of touching a trash bin:
+say “You better use your foot if you still want to live.”
+Understand “devouring [something]” or “chewing [something]” as eating.
+An object can be tasty or tasteless.
+Candies are tasty.
+U of I t-shirt is tasteless.
+Check eating:
+	if noun is tasteless:
+		say “You don’t want to eat [noun] ever again!”;
+		stop the action.
+Carry out eating:
+	if noun is tasty:
+		say “You should order [noun] more right away!”;
+Instead of eating [noun]:
+say “You should be careful for what you put into your stomach, you are what you eat!”
+ 
+Section -- People
+ 
+Security guard is a person in the East Wing. “Someone mistakenly opened the East Wing emergency door and it causes annoying repeat beep sound. George, the security guard, is closing the door [George Repair Guy]".
+ 
+Understand “George” as security guard.
+ 
+Math club members are people.
+Math club members are in the East Wing.
+The description of math club members is “[if security guard is in the location]They are behaving nicely and greeting George. [else]Math club members are discussing about unsolved problems discussed in class before.”
+ 
+some math club members are scenery.
+ 
+some therapy dogs are scenery animals.
+some therapy dogs are in the HAB123 class.
+ 
+The description of therapy dogs is “The dogs are caring and giving enough affection to the students.”
+ 
+Understand “dogs” and “dog” and “therapy” as therapy dogs.
+ 
+Talking to is an action applying to one visible thing. Understand "talk to [something]" as talking to.
+ 
+Check talking to [something]:
+	if noun is not a person:
+		say "Who are you talking to? Did you get enough sleep last night?";
+		stop the action.
+   
+Carry out talking to:
+		say “You greet [noun] and he remembers you! That is fantastic!”
+  
+Instead of talking to security guard:
+		say “George has to go now, he hasn’t ate anything yet today.”
+ 
+Instead of talking to math club members:
+		say “You have never taken any math courses! you might not want to join the club!” 
+  
+Instead of talking to [something]:
+		say “You don’t know [noun] well enough, you want to consider twice greeting him.”
+  
+Instead of asking security guard about “weather”:
+		say “George says, ‘You might want to look at your phone.’”
+ 
+Instead of giving candies to security guard: 
+		say “He doesn’t seem to be that hungry, he is also an ignorant guy.";
+	stop the action.
+ 
+Instead of giving candies to therapy dogs:
+		say “They can’t eat human food.”;
+		stop the action.
+ 
+Instead of giving something to math club members:
+		say “They carry too many things already!.”;
+		stop the action.
+ 
+Instead of attacking therapy dogs:
+		say “They are so cute and innocent!.”;
+	stop the action.
+  
+Instead of attacking security guard:
+		say “He lifts and you don’t.”;
+	stop the action;    
+  
+Instead of attacking math club members:
+		say “They only want to study! leave them alone!”;
+	stop the action;
+  
+Instead of attacking something:
+	say “Please don’t attack the [noun].”
+ 
+Hammering is an action applying to two visible things.
+ 
+Understand “hammer [something] with [something]" and “attack [something] with [something]" as hammering. 
+  
+Instead of hammering: 
+	if the noun is hanging chairs:
+		say “You don’t have any money to repair it later.”;
+		stop the action;
+	else if the noun is security guard:
+		say “He can certainly beat you harder later!”;
+		stop the action;
+		 
+Section -- Variable
+  
+GeorgePatrolCounter is a number variable.
+GeorgePatrolCounter is 0.
+  
+Every turn when player is in East Wing:
+	increment GeorgePatrolCounter.
+  
+Before examining something when player is in East Wing:
+	increase GeorgePatrolCounter by 1.
+Before switching on something when player is in East Wing:
+	increase GeorgePatrolCounter by 2.
+	  
+GeorgeOnShift is a truth state variable.
+GeorgeOnShift is false.
+  
+Every turn when GeorgePatrolCounter is greater than 5 and GeorgeOnShift is false:
+	say "George is accountable for school safety. However, he has an OCD (Obsessive-Compulsive Disorder), he would put everything in place with the right order. As he walks through the East Wing, one student forgot to close the trash bin. George then run and close the trash bin.";
+	now trash bin is switched off;
+	now Security Guard is in East Wing;
+	now GeorgeOnShift is true.
+	  
+East Wing Emergency Door is outside from East Wing.
+  
+Instead of going nowhere from East Wing Emergency Door:
+	say "It is currently under renovation. However, your stubborn heart can let you GO IN.";
+	  
+A thing can be repulsive or appealing or nasty or safe. A thing is usually repulsive.
+  
+The wet paint is a scenery in East Wing Emergency Door.
+The wet paint is repulsive.
+  
+Understand "acrylic" and "dye" and "color" and "wax" as paint.
+ 
+To say Don't touch the wet paint:
+	if wet paint is repulsive:
+		say "You want to go downstairs but the lift takes too much time. Emergency Door has a stair than can lead you there. You can go IN to the East Wing Emergency Door from here [paragraph break] A wet paint caution reminds you to be careful.";
+	else if wet paint is appealing:
+		say "You are curious and you accidentally slipped to the wet paint. ";
+		now the wet paint is dirty;
+		stop the action;
+	else if wet paint is nasty:
+		say "Your plain shirt is now coloured and you need to pay the damage you had caused. ";
+	else:
+		say "You don't have any better choices. You should GO IN. ";
+			  
+The description of East Wing Emergency Door is "[if wet paint is repulsive]You want to go downstairs but the lift takes too much time. Emergency Door has a stair than can lead you there. You can go IN to the East Wing Emergency Door from here.[paragraph break] A wet paint caution reminds you to be careful.[else if wet paint is appealing]You are curious and you accidentally slipped to the wet paint.[else if wet paint is nasty]Your plain shirt is now coloured and you need to pay the damage you had caused.[else]You don't have any better choices. You should GO IN. [Don't touch the wet paint]".
+ 
+A thing can be examined or unexamined. A thing is usually unexamined.
+ 
+Instead of examining wet paint:
+	now wet paint is examined;
+	if wet paint is repulsive:
+		say "The first thing you notice is the unpleasant smell of new paint and you want to be careful not to touch the paint.";
+		The Evil Mopping Boy Comes in two turns from now;
+		now wet paint is appealing;
+		stop the action;
+	if wet paint is appealing:
+		say "You know you will slip into the wet paint because someone is mopping and makes it slippery, don't come close!";
+		now wet paint is safe;
+		stop the action;
+	if wet paint is safe:
+		say "You can safely go through the stairs now."
+	 
+At the time when The Evil Mopping Boy Comes:
+	say "The floor is slippery and you may slipped to the wet paint!";
+	if player is in East Wing Emergency Door:
+		end the story finally saying "You have slipped into the wet paint and your dirty shirt has made you no longer belong inside the building. ";
+	if player is in Henry Administration Building Entrance or player is in University Student Financial Services & Cashier Operation or player is in West Wing:
+		say "There are no wet paint in these rooms and you are safe from the dirt! Eventhough you are not safe from the wet floor!";
+		move Lovely Cleaning Girl to East Wing Emergency Door;
+		now wet paint is clean.
+ 
+Lovely Cleaning Girl is a thing. "The wet paint is now clean through the Lovely Cleaning Girl kindness."
+  
+The description of the Lovely Cleaning Girl is "She is a kind-hearted spirit, hygiene is her priority and cleaning is her passion."
+ 
+Section -- Lists and Loops
+ 
+Understand "George" and "securityguard" and "security" and "guard" as security guard.
+The printed name of security guard is "George".
+ 
+To say George Repair Guy:
+	if security guard is unexamined:
+		say "George loves to fix and construct something from scratch.";
+		stop the action;
+	if wooden desks is unexamined:
+		say "George is repairing some of the broken desks.";
+		stop the action;
+	if computer is unexamined:
+		say "George would like you to take a good care of the computers.";
+		stop the action;
+	if hanging chairs is unexamined:
+		say "George has warned everyone to not stand on the chairs.";
+		stop the action;
+	if trash bin is unexamined:
+		say "George also loves to keep clean of their place.";
+		stop the action;
+	else:
+		say "You can learn a lot from George, always fix things without expecting any payback.";
+		 
+Instead of examining security guard:
+	if security guard is unexamined:
+		say "George looks lonely and only walking back and forth. Go stop him and try TALKING to him.";
+		now security guard is examined;
+		stop the action;
+	else:
+		if security guard carries something:
+			say "George is carrying [a list of things carried by security guard].";
+		if security guard is wearing something:
+			say "He is wearing [a list of things worn by security guard].";
+		say "You could try ASKING him about something.";
+		 
+security guard is carrying a black plastic stick.
+ 
+The description of plastic stick is "It is the stick that polices usually use."
+ 
+security guard is wearing a blue army armor.
+ 
+The description of blue army armor is "Only strong warrior worthy for this armor."
+ 
+Instead of taking plastic stick:
+	if security guard is holding plastic stick:
+		say "You have been a good person, George likes you and give you the chance to practice using his plastic stick";
+		now player has plastic stick.
+		 
+The printed name of East Wing is "Henry Administration Building East Wing".
+ 
+A DonationBox is a kind of container. a DonationBox is usually open and openable.
+A DonationBox can be ForBoy or ForGirl. A DonationBox is usually ForBoy.
+ 
+EastWingDonation is a scenery DonationBox in East Wing.
+EastWingDonation is ForBoy.
+The printed name of EastWingDonation is "Donate to remove the evil mopping boy from East Wing!".
+Understand "donation" and "box" and "donationbox" as EastWingDonation.
+ 
+A thing can be Undonatable or Donatable. A thing is usually Donatable.
+ 
+shiny chocolate are a donatable thing in EastWingDonation. "The evil boy loves chocolate so much, you should feed him with sweets."
+The printed name of shiny chocolate is "there is nothing better than the pure sweet dark chocolate".
+understand "choco" and "coco" as shiny chocolate.
+ 
+instead of taking shiny chocolate:
+	say "You can also donate with other kind of sweets."
+	 
+biscuit is donatable.
+ 
+the Player is carrying a bottle of milkshake.
+the description of a bottle of milkshake is "You prepared this for your lunch."
+ 
+an ice cream is a donatable thing in EastWingDonation.
+The description of an ice cream is "Everybody loves ice cream for dessert."
+ 
+Instead of inserting something into ForBoy DonationBox:
+	if noun is donatable:
+		say "You want to eat the [noun], but you remember the mess the evil boy has been making.";
+	else:
+		say "Throw it or eat it";
+		now noun is in second noun.
+	 
+Instead of inserting something into a ForGirl DonationBox:
+	if noun is donatable:
+		say "You can donate to the boy to kick him from East Wing.";
+		now noun is in second noun;
+	else:
+		say "You can just donate to the girl or consume it for yourself."
+		 
+Check examining a DonationBox:
+	say "You can't steal the sweets in the box. You will have to do sweets trading first.";
+	stop the action.
+	 
+Check searching a DonationBox:
+	say "You can't steal the sweets in the box. You will have to do sweets trading first.";
+	stop the action.
+ 
+SweetsTrading is an action applying to nothing. Understand "trade" and "sweetstrade" and "trading" as SweetsTrading.
+ 
+Carry out SweetsTrading:
+	Repeat with R running through DonationBox in the location:
+		say "You hunt around in [R] and see [if the number of things in R is not 0][a list of things in R]. [else]nothing is here.";
+		if R contains ice cream:
+			say "You finally found something to donate.";
+			now player has ice cream.
+			 
+Instead of searching a DonationBox:
+	try SweetsTrading;
+	stop the action.
 
 SECTION -- Emma
 
