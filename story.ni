@@ -15,10 +15,7 @@ Joint Space is east from Lincoln Hall Entrance.
 SECTION -- Charles
 
 Henry Administration Building Entrance is a room. “[if unvisited] As you open the door and walk through the entrance hall, you would feel peace and calm separated from the Illini Terminal’s crowd outside. Then you are faced with 3-separated walkways; there are front, west wing and east wing. As you are facing a room of University Student Financial Services & Cashier Operation, you notice, there are two students wandering around finding their classes. It seems to be a tough first day of school for some freshmen.”
-University Student Financial Services & Cashier Operation is a room.
-University Student Financial Services & Cashier Operation is north of Henry Administration Building Entrance. 
-The description of University Student Financial Services & Cashier Operation is “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile. You may want to think of another time visiting this place, maybe not on the first day of semester.”
-
+University Student Financial Services & Cashier Operation is north of Henry Administration Building Entrance. “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile. You may want to think of another time visiting this place, maybe not on the first day of semester.”
 West Wing is west of Henry Administration Building Entrance. “It is 10:50 and people are rushing out and in between classes, as some of them have to get into another class. You would have love the enthusiasm showed on the first day, a fresh start of the semester!”
 East Wing is east of Henry Administration Building Entrance. “More and more classes are located in this square-shaped building. It seems to be an efficient building for classes. The building doesn’t take a lot of spaces and still can manage to create many decent-sized rooms. People are sitting through the hall waiting for their turn getting into the classrooms. [if wet paint is appealing]Watchout![else]The East Wing is crowded with many students waiting for classes. You should be careful of wet paint and evil mopping boy. You can also EXIT the building from here.".
  
@@ -29,9 +26,9 @@ say “If you are looking for classes, you may not want to go straight. You shou
 Instead of going nowhere when the player is in University Student Financial Services & Cashier Operation:
 say “You shouldn’t be here if you don’t have any financial consultation or payments to be made. You are just making it worse! You probably should go EAST or WEST to the wings.”
 Instead of going nowhere when the player is in West Wing:
-say “Since there are a lot of people rushing in and out, you might want to stand aside and wait until everything cools down. Try to listen to music or drink some water, you want to stay hydrated! You can always explore the building by going NORTH.”
+say “Since there are a lot of people rushing in and out, you might want to stand aside and wait until everything cools down. Try to listen to music or drink some water, you want to stay hydrated! You can always explore the building by going EAST.”
 Instead of going nowhere when the player is in East Wing:
-say “Look for people who are leaving their chairs and grab one of those. Your legs are tired and you need a rest of a minute or two. But don’t forget to get into your class when the time comes. You can always explore the building by going NORTH.”
+say “Look for people who are leaving their chairs and grab one of those. Your legs are tired and you need a rest of a minute or two. But don’t forget to get into your class when the time comes. You can always explore the building by going WEST.”
  
 SECTION -- THINGS
  
@@ -54,6 +51,9 @@ The description of Candies is “You can take some candies while waiting in line
 Understand “candy” and “sweets” as candies.
 The player is wearing an orange U of I t-shirt.
 The description of orange U of I t-shirt is “You are wearing this orange U of I t-shirt to show your pride being an Illini!”
+Tablet Key to Success is supporter in the East Wing.
+The description of the tablet of key to success is "It is the secret to 4.0 GPA."
+Understand "tablet" and "key to success" as tablet of key to success.
  
 Section -- INTERACTION
  
@@ -64,7 +64,7 @@ Instead of eating wooden desks:
 Say “You have eaten one of those once and it wasn’t good. You don’t want to     do the same thing”;
 Stop the action.
 Instead of examining computer:
-Say “[if switched off] Go turn on that computer, they would absolutely love     your enthusiasm. [else] You don’t want to take any random actions without   further consideration. It is not your responsibility.”.
+Say “[if switched off] Go turn on that computer, they would absolutely love your enthusiasm. [else] You don’t want to take any random actions without   further consideration. It is not your responsibility.”.
 Instead of taking computer:
 Say “Those are not yours! Put it back immediately!”;
 Stop the action.
@@ -115,7 +115,7 @@ say “You should be careful for what you put into your stomach, you are what yo
  
 Section -- People
  
-Security guard is a person in the East Wing. “Someone mistakenly opened the East Wing emergency door and it causes annoying repeat beep sound. George, the security guard, is closing the door [George Repair Guy]".
+Security guard is a person in the East Wing. “Someone mistakenly opened the East Wing emergency door and it causes annoying repeat beep sound. George, the security guard, is closing the door. [George Repair Guy]".
  
 Understand “George” as security guard.
  
@@ -123,14 +123,22 @@ Math club members are people.
 Math club members are in the East Wing.
 The description of math club members is “[if security guard is in the location]They are behaving nicely and greeting George. [else]Math club members are discussing about unsolved problems discussed in class before.”
  
-some math club members are scenery.
- 
-some therapy dogs are scenery animals.
-some therapy dogs are in the HAB123 class.
+some therapy dogs are scenery.
+some therapy dogs are in the west wing.
  
 The description of therapy dogs is “The dogs are caring and giving enough affection to the students.”
  
 Understand “dogs” and “dog” and “therapy” as therapy dogs.
+ 
+Talking to is an action applying to one visible thing. Understand "talk to [something]" as talking to.
+ 
+Check talking to [something]:
+	if noun is not a person:
+		say "Who are you talking to? Did you get enough sleep last night?";
+		stop the action.
+   
+Carry out talking to:
+		say “You greet [noun] and he remembers you! That is fantastic!”
   
 Instead of talking to security guard:
 		say “George has to go now, he hasn’t ate anything yet today.”
@@ -370,6 +378,89 @@ Carry out SweetsTrading:
 Instead of searching a DonationBox:
 	try SweetsTrading;
 	stop the action.
+	 
+Section -- Table
+ 
+A person can be PaintAttacked or PaintFree. 
+A person is usually PaintFree.
+  
+Evil Painter is a scenery person in West Wing. 
+The description of Evil Painter is "The painter doesn't like to be seen"
+  
+At the time when Evil Painter comes:
+	now player is in West Wing;
+	say "You are in trouble! Try to escape!";
+	now Evil Painter is nowhere;
+	now player is PaintAttacked.
+ 
+Table of Evil Painter
+attack
+"Excuse me, you supposed to not be around here."
+"GO OUT THIS IS MY ZONE"
+"You think you are tough? Try to not slipped into this wet paint!"
+"This is my painting shift!"
+  
+Instead of going nowhere when player is in West Wing:
+	say "You can run but you can't hide."
+  
+GivePainterSweets is a truth state variable.
+GivePainterSweets is false.
+  
+PainterDangerLevel is a number that varies.
+PainterDangerLevel is 4.
+  
+Every turn when player is PaintAttacked:
+	choose row PainterDangerLevel in the Table of Evil Painter;
+	if PainterDangerLevel is greater than 0:
+		say "[attack entry] You have [PainterDangerLevel] turns to run from the evil painter.[paragraph break]";
+		decrease PainterDangerLevel by 1;
+		stop the action;
+	else:
+		end the story finally saying "You have failed to escape from the Evil Painter.";
+	if GivePainterSweets is true:
+		say "You have finally found what he has been looking for! You can now escape from him.";
+		now player is in Henry Administration Building Entrance;
+		now player is PaintFree;
+	else:
+		say "You have to find what the painter needs";
+		end the story.
+  
+Instead of giving candies to Evil Painter:
+	say "You should remember that everyone loves sweets and you can share that happiness.";
+	now GivePainterSweets is true;
+	now PainterDangerLevel is 0;
+	now Evil Painter is nowhere;
+  
+Interrogating about is an action applying to two visible things.
+ 
+Understand "ask [something] about [something]" as interrogating about.  
+  
+Instead of Interrogating [something] about Tablet Key to Success:
+	choose a random row in the Table of Tablet Key to Success;
+	say "I have done. [comment entry]".
+	  
+Table of Tablet Key to Success
+comment
+"You should spend at least 5 hours a day reviewing the materials."
+"You have to be proactive and ask in class."
+"You have to join a discussion/study group."
+"You can try ask TAs/Tutors for help."
+  
+Every turn when player is in West Wing:
+	say "Don't mess around with Evil Painter";
+	Evil Painter Comes in two turns from now;
+ 
+Every turn when player is in Henry Administration Building Entrance:
+	if a random chance of 1 in 10 succeeds:
+		choose a random row in the Table of Random Events;
+		say "There are a lot of weird things happening in this building. [event entry][paragraph break]"
+   
+Table of Random Events
+event
+"A hip-hop song is on."
+"It smells like a pizza restaurant."
+"It is hazy inside."
+"Everyone is screaming your name."
 
 SECTION -- Emma
 
@@ -499,16 +590,6 @@ a ghost is an animal in the bathroom.
 The description of the ghost is "A mysterious figure floats menacingly. It looks at you with a terrifying glare. If you could breathe before, all the air is gone from your lungs at the sight."
  
 understand "figure" and "floaty thing" as ghost.
- 
-Talking to is an action applying to one visible thing. Understand "talk with [something]" and "talk to [something]" as talking to.
- 
-Check talking to [something]: 
-	if noun is not a person:
-		say "You really want to try to talk to that? Well, you talk its non-existent ears off, that's for sure.";
-		stop the action. 
-		 
-Carry out talking to: 
-	say "There's nothing really much to talk about. They at least nod along even though they don't seem to care."
 	 
 Instead of talking to teacher:
 	say "The teacher is furiously writing down notes for his next class. Who knew there was enough demand for a class on ghosts? Maybe if you asked a specific question, he could give you a solid answer?"
@@ -1146,7 +1227,7 @@ to say Lincoln Hall Second Floor Lobby Description:
 		else:
 			say "Through the NORTH and SOUTH doors you don't see anyone, and DOWN the stairs you can barely see the top of Lincoln's head.";
 	else:
-		if turn count is less than 15:
+		if Lincoln Hall Second Floor Wait Room is unvisited:
 			say "After sprinting past Lincoln, you see the inattentive vegetable of a student in the waiting room to the NORTH and the empty room to the SOUTH as you stand at the top of the stairs that head back DOWN to the entrance.";
 		else:
 			say "After sprinting past Lincoln, you see the waiting rooms to the NORTH and South are empty as you stand at the top of the stairs that head back DOWN to the entrance.";
@@ -1154,10 +1235,7 @@ to say Lincoln Hall Second Floor Lobby Description:
    
 Lincoln Hall Classroom is a room. "[if unvisited]After walking through the halls for minute, you come across a room with a piece of paper that clearly had trouble being ripped out of a spiral notebook. On this torn sheet, a lone 'L' is scrawled in the center, taking up most of what's left of the paper. The window shows the lights in the room are off. With your curiosity peaked, you test the handle, and to your surprise the door is unlocked. You're punched back by a horrific stench and slam the door before falling to your knees as you start to dry heave. After regaining your composure and a small pep talk, you decide to fill your lungs with as much clean air as you can hold, and reenter the room. You freeze in place, finding the source of the putrid smell. A dismembered body lays across the teacher's desk, it's legs poking out of a trash can sporting a pair of black Adidas shoes. A surgeon tray lays next to the body, holding a set of tools dripping with bright red blood. You realize you've focused solely on the body on the table and slowly look to other side of the room, when your eyes halt. You try to look away, but find your eyes no longer under your control. Your eyes are locked starring directly into the same cold, dead eyes that greeted you at the building entrance. You recognize the same pattern on its nose, ensuring it to be the same Abraham Lincoln bust that was in the lobby. A shiver runs down your spine, signaling to get OUT of this room.[else]You find the 'L' door, and after taking a few deep breaths, enter the room. You reacquaint yourself with the dismembered body laying next to the surgical tray. Automatically your eyes drift towards the Lincoln bust on the other side of the room and are locked in place. Without being able to see where to go, you can only get OUT of this room."
 
-Lincoln Hall Second Floor Wait Room is a room. "As you step into the waiting room, the lights turn off and it becomes too dark to see. You are close enough to the door that you know you can go SOUTH to exit.".
-
-After going south from Lincoln Hall Second Floor Wait Room:
-	say "As you leave, the lights turn back on.".
+Lincoln Hall Second Floor Wait Room is a room. "[if unvisited]As you step into the waiting room, the other student checks his watch with a look of shock. He throws everything into his backpack and runs out the door.[else]There are chairs in the corner, with magazines ontop of end tables. The receptionist isn't at her desk, but a bowl full of mints are.".
    
    
 SECTION -- Room Locations
@@ -1347,6 +1425,37 @@ Lincoln Hall Second Floor Lobby Door is scenery.
  
 Understand "door" as Lincoln Hall Second Floor Lobby Door.
   
+
+Lincoln Hall Wait Chairs is scenery in Lincoln Hall Second Floor Wait Room. "Two red chairs and a couch are arranged in the corner. As you sit down in the chair, it sinks down too low to be comfortable. You decide its better just to stand."
+
+Understand "chair" and "couch" and "chairs" as Lincoln Hall Wait Chairs.
+
+
+Lincoln Hall Wait End Table is a supporter in LIncoln Hall Second Floor Wait Room. "Small end tables sit at either side of the couch. They have glass centers that have magazines resting on top."
+
+Understand "table" and "end table" and "tables" and "end tables" as Lincoln Hall Wait End Table.
+
+
+Lincoln Hall Wait Magazines is a thing on top of Lincoln Hall Wait End Table. "An assortment of Illinois propaganda. You flip through a few pages and become more bored than when you started reading."
+
+Understand "magazine" and "magazines" as Lincoln Hall Wait Magazines.
+
+Instead of taking LIncoln Hall Wait Magazines:
+	say "You don't want to read them now, let alone in the future."
+	
+
+Lincoln Hall Wait Mints is a thing in Lincoln Hall Second Floor Wait Room. "There's something about these mints that draw you closer."
+
+Understand "candy" and "bowl" and "bowl of candy" and "mint" and "mints" and "bowl of mints" as Lincoln Hall Wait Mints.
+
+Instead of eating Lincoln Hall Wait Mints:
+	say "You grab the last mint in the bowl and pull on the two sides of the wrapper to reveal  the mint. You pop it into your mouth and realize there was something at the bottom of the bowl. A ring! You grab it and put it in your pocket.";
+	increase score by 1000;
+	Now the Lincoln Hall Wait Mints is nowhere.
+	Now the player is carrying the Lincoln Hall Ring.
+	
+Lincoln Hall Ring is a wearable thing with description "A ring that fits you perfectly. The insisde is engraved with the letters 'A.L'.".
+
 Section -- Verbs
   
 Understand "flip [something] on" and "toggle [something] on" as switching on.
@@ -1389,12 +1498,29 @@ Check attacking:
 		say "You give the [noun] a good whack, but it didn't change anything about it."
 Carry out attacking:
 	say "You wind up your punch, but then [noun] notices you so you play it off as stretching."
+	
+Check Interrogating about:
+	if noun is not a person:
+		say "Why don't you ask something that can actually talk?";
+		stop the action.
+  
+Carry out Interrogating about:
+	say "You ask the [noun] about the [second noun] but you learn nothing important."
 	 
 Section -- People
  
 Lincoln Hall Students are people in the Lincoln Hall Entrance. Students are scenery.
  
-The description of lincoln hall students is "A couple students are standing around, looking at their phones. Others are passing through the hallways, heading to class.".
+The description of lincoln hall students is "[lincoln hall students description].".
+
+To say lincoln hall students description:
+	if the number of rows in Table of Student Descriptions is not 0:
+		choose a random row in the Table of Student Descriptions;
+		say "[description entry]";
+		blank out the whole row;
+		stop the action;
+	else:
+		say "A few students are sitting around the room.".
  
 Understand "couple students" and "students" as lincoln hall students.
  
@@ -1455,13 +1581,23 @@ Instead of talking to Lincoln bust:
 	else:
 		say "The bust doesn't want to talk with you.".
 		 
-Instead of asking Lincoln bust about something:
+Instead of interrogating about Lincoln Bust: 
 	if the player is wearing the Lincoln Beard:
-		if something is Lincoln Hall Second Floor Lobby Door:
-			say "I have opened the second floor door for you now.";
-			Now OpenedDoor is true;
-			stop the action;
+		Repeat through Table of Bust Responses:
+			if the second noun is the Item entry:
+				say "[reply entry][paragraph break]";
+				if second noun is Lincoln Hall Second Floor Lobby Door:
+					Now OpenedDoor is true;
+				stop the action;
 	say "He doesn't want to talk.".
+
+Table of Bust Responses 
+Item	reply 
+Lincoln Hall Second Floor Lobby Door	"I have opened the second floor door for you now."
+beard	"That beard is magnificent."
+Lincoln Hall inattentive student	"No one knows how to get his attention."
+razor	"If you use that, I won't want to talk to you anymore."
+chip	"Look delicious, sadly I don't have a stomach to digest it.'“
 	 
 Instead of giving something to Lincoln bust:
 	say "How would he hold it?".
@@ -1485,81 +1621,92 @@ Before putting on Lincoln Beard:
 		increase score by 10;
 		now GrownBeard is true.
 		
+Section -- Table
+
+Table of Student Descriptions
+description
+"There's a group of students sitting at the staircase, working on homework."
+"Students are walking up and down the hallways."
+"As you look at the students walking by, one of them trips, dropping their notebook. You go and help them up and they thank you as they scurry to their next class."
+"The room is very empty, and only a few students are scattered throughout."
+"A couple students are standing around, looking at their phones. Others are passing through the hallways, heading to class.".
+		
 Section -- Every turn
 
 Every turn:
-	if the time of day is 12:00 am:
-		Now ClockCount is 12;
-		Ring the clock;
-	otherwise if the time of day is 1:00 am:
-		Now ClockCount is 1;
-		Ring the clock;
-	otherwise if the time of day is 2:00 am:
-		Now ClockCount is 2;
-		Ring the clock;
-	otherwise if the time of day is 3:00 am:
-		Now ClockCount is 3;
-		Ring the clock;
-	otherwise if the time of day is 4:00 am:
-		Now ClockCount is 4;
-		Ring the clock;
-	otherwise if the time of day is 5:00 am:
-		Now ClockCount is 5;
-		Ring the clock;
-	otherwise if the time of day is 6:00 am:
-		Now ClockCount is 6;
-		Ring the clock;
-	otherwise if the time of day is 7:00 am:
-		Now ClockCount is 7;
-		Ring the clock;
-	otherwise if the time of day is 8:00 am:
-		Now ClockCount is 8;
-		Ring the clock;
-	otherwise if the time of day is 9:00 am:
-		Now ClockCount is 9;
-		Ring the clock;
-	otherwise if the time of day is 10:00 am:
-		Now ClockCount is 10;
-		Ring the clock;
-	otherwise if the time of day is 11:00 am:
-		Now ClockCount is 11;
-		Ring the clock;
-	otherwise if the time of day is 12:00 pm:
-		Now ClockCount is 12;
-		Ring the clock;
-	otherwise if the time of day is 1:00 pm:
-		Now ClockCount is 1;
-		Ring the clock;
-	otherwise if the time of day is 2:00 pm:
-		Now ClockCount is 2;
-		Ring the clock;
-	otherwise if the time of day is 3:00 pm:
-		Now ClockCount is 3;
-		Ring the clock;
-	otherwise if the time of day is 4:00 pm:
-		Now ClockCount is 4;
-		Ring the clock;
-	otherwise if the time of day is 5:00 pm:
-		Now ClockCount is 5;
-		Ring the clock;
-	otherwise if the time of day is 6:00 pm:
-		Now ClockCount is 6;
-		Ring the clock;
-	otherwise if the time of day is 7:00 pm:
-		Now ClockCount is 7;
-		Ring the clock;
-	otherwise if the time of day is 8:00 pm:
-		Now ClockCount is 8;
-		Ring the clock;
-	otherwise if the time of day is 9:00 pm:
-		Now ClockCount is 9;
-		Ring the clock;
-	otherwise if the time of day is 10:00 pm:
-		Now ClockCount is 10;
-		Ring the clock;
-	otherwise if the time of day is 11:00 pm:
-		Now ClockCount is 11;
-		Ring the clock.
+	if the player is in Lincoln Hall Entrance:
+		if the time of day is 12:00 am:
+			Now ClockCount is 12;
+			Ring the clock;
+		otherwise if the time of day is 1:00 am:
+			Now ClockCount is 1;
+			Ring the clock;
+		otherwise if the time of day is 2:00 am:
+			Now ClockCount is 2;
+			Ring the clock;
+		otherwise if the time of day is 3:00 am:
+			Now ClockCount is 3;
+			Ring the clock;
+		otherwise if the time of day is 4:00 am:
+			Now ClockCount is 4;
+			Ring the clock;
+		otherwise if the time of day is 5:00 am:
+			Now ClockCount is 5;
+			Ring the clock;
+		otherwise if the time of day is 6:00 am:
+			Now ClockCount is 6;
+			Ring the clock;
+		otherwise if the time of day is 7:00 am:
+			Now ClockCount is 7;
+			Ring the clock;
+		otherwise if the time of day is 8:00 am:
+			Now ClockCount is 8;
+			Ring the clock;
+		otherwise if the time of day is 9:00 am:
+			Now ClockCount is 9;
+			Ring the clock;
+		otherwise if the time of day is 10:00 am:
+			Now ClockCount is 10;
+			Ring the clock;
+		otherwise if the time of day is 11:00 am:
+			Now ClockCount is 11;
+			Ring the clock;
+		otherwise if the time of day is 12:00 pm:
+			Now ClockCount is 12;
+			Ring the clock;
+		otherwise if the time of day is 1:00 pm:
+			Now ClockCount is 1;
+			Ring the clock;
+		otherwise if the time of day is 2:00 pm:
+			Now ClockCount is 2;
+			Ring the clock;
+		otherwise if the time of day is 3:00 pm:
+			Now ClockCount is 3;
+			Ring the clock;
+		otherwise if the time of day is 4:00 pm:
+			Now ClockCount is 4;
+			Ring the clock;
+		otherwise if the time of day is 5:00 pm:
+			Now ClockCount is 5;
+			Ring the clock;
+		otherwise if the time of day is 6:00 pm:
+			Now ClockCount is 6;
+			Ring the clock;
+		otherwise if the time of day is 7:00 pm:
+			Now ClockCount is 7;
+			Ring the clock;
+		otherwise if the time of day is 8:00 pm:
+			Now ClockCount is 8;
+			Ring the clock;
+		otherwise if the time of day is 9:00 pm:
+			Now ClockCount is 9;
+			Ring the clock;
+		otherwise if the time of day is 10:00 pm:
+			Now ClockCount is 10;
+			Ring the clock;
+		otherwise if the time of day is 11:00 pm:
+			Now ClockCount is 11;
+			Ring the clock.
 		
 to ring the clock:
 	repeat with x running from 1 to ClockCount - 1:
