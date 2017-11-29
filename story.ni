@@ -3,19 +3,29 @@
 
 Use Scoring.
 
+Definition: a direction (called X) is Navigatable if the room X from the location is a room. 
+  
+WhichWaying is an action applying to nothing. 
+Understand "Which Way" and "Way" and "Where can I go" as Whichwaying. 
+  
+Carry out WhichWaying:
+	say "You may go [list of Navigatable Directions]."
+
 Section -- Joint
 
-Joint Space is a room. "This is between everyone's rooms. EAST for Charles, NORTH for Nick's, SOUTHWEST for Aki, SOUTH for Emma, and WEST for Collin's.". 
-Joint Space is west from Henry Administration Building Enrance.
+Joint Space is a room. "This is between everyone's rooms. SOUTHEAST for Charles, NORTH for Nick's, NORTHEAST for Aki, SOUTH for Emma, and WEST for Collin's.". 
+Joint Space is northwest from Henry Administration Building Entrance.
 Joint Space is south from Illini Union Bookstore.
-Joint Space is northeast from Altgeld Hall Interior.
+Joint Space is southwest from Altgeld Hall Interior.
 Joint Space is north from English Building Entrance.
 Joint Space is east from Lincoln Hall Entrance.
 
 SECTION -- Charles
 
 Henry Administration Building Entrance is a room. “[if unvisited] As you open the door and walk through the entrance hall, you would feel peace and calm separated from the Illini Terminal’s crowd outside. Then you are faced with 3-separated walkways; there are front, west wing and east wing. As you are facing a room of University Student Financial Services & Cashier Operation, you notice, there are two students wandering around finding their classes. It seems to be a tough first day of school for some freshmen.”
-University Student Financial Services & Cashier Operation is north of Henry Administration Building Entrance. “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile. You may want to think of another time visiting this place, maybe not on the first day of semester.”
+University Student Financial SaC is a room.
+University Student Financial SaC is north of Henry Administration Building Entrance. “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile. You may want to think of another time visiting this place, maybe not on the first day of semester.”
+University Student Financial SaC has printed name "University Student Financial Services & Cashier Operation".
 West Wing is west of Henry Administration Building Entrance. “It is 10:50 and people are rushing out and in between classes, as some of them have to get into another class. You would have love the enthusiasm showed on the first day, a fresh start of the semester!”
 East Wing is east of Henry Administration Building Entrance. “More and more classes are located in this square-shaped building. It seems to be an efficient building for classes. The building doesn’t take a lot of spaces and still can manage to create many decent-sized rooms. People are sitting through the hall waiting for their turn getting into the classrooms. [if wet paint is appealing]Watchout![else]The East Wing is crowded with many students waiting for classes. You should be careful of wet paint and evil mopping boy. You can also EXIT the building from here.".
  
@@ -23,7 +33,7 @@ SECTION -- Going Nowhere
  
 Instead of going nowhere when the player is in Henry Administration Building Entrance:
 say “If you are looking for classes, you may not want to go straight. You should go WEST or EAST wing. There are where the classes are located.”
-Instead of going nowhere when the player is in University Student Financial Services & Cashier Operation:
+Instead of going nowhere when the player is in University Student Financial SaC:
 say “You shouldn’t be here if you don’t have any financial consultation or payments to be made. You are just making it worse! You probably should go EAST or WEST to the wings.”
 Instead of going nowhere when the player is in West Wing:
 say “Since there are a lot of people rushing in and out, you might want to stand aside and wait until everything cools down. Try to listen to music or drink some water, you want to stay hydrated! You can always explore the building by going EAST.”
@@ -32,10 +42,10 @@ say “Look for people who are leaving their chairs and grab one of those. Your 
  
 SECTION -- THINGS
  
-Wooden desks are scenery in the University Student Financial Services & Cashier Operation.
+Wooden desks are scenery in the University Student Financial SaC.
 The description of the wooden desks is "The desks stand out the most as you are facing it most of the time when you are in line These desks are placed next to the long line of people. Every financial consultant would use these desks when serving the students."
 Understand “desk” and “desks” as Wooden desks.
-A computer is a device in the University Student Financial Services & Cashier Operation. “The sound of keyboard typing and the bright lights from computer’s monitor fill the atmosphere”.
+A computer is a device in the University Student Financial SaC. “The sound of keyboard typing and the bright lights from computer’s monitor fill the atmosphere”.
 The computer is fixed in place.
 The description of the computer is “Computer is an essential device for one’s office. It may seem too common device but you would feel their presence when they are not around. So, don’t ever think to omit the presence of computer.”
 Understand “device” and “comp” and “computers” as computer.
@@ -46,7 +56,7 @@ A trash bin is a container in the West Wing.
 The trash bin is scenery.
 The description of the trash bin is “It is the most useful container as it prevents the hall from all trashes.”
 Understand “bin” and “trash can” as trash bin.
-Candies are edible thing in the University Student Financial Services & Cashier Operation.
+Candies are edible thing in the University Student Financial SaC.
 The description of Candies is “You can take some candies while waiting in line for consultation. Don’t mind your diet, you deserve it!”
 Understand “candy” and “sweets” as candies.
 The player is wearing an orange U of I t-shirt.
@@ -259,7 +269,7 @@ At the time when The Evil Mopping Boy Comes:
 	say "The floor is slippery and you may slipped to the wet paint!";
 	if player is in East Wing Emergency Door:
 		end the story finally saying "You have slipped into the wet paint and your dirty shirt has made you no longer belong inside the building. ";
-	if player is in Henry Administration Building Entrance or player is in University Student Financial Services & Cashier Operation or player is in West Wing:
+	if player is in Henry Administration Building Entrance or player is in University Student Financial SaC or player is in West Wing:
 		say "There are no wet paint in these rooms and you are safe from the dirt! Eventhough you are not safe from the wet floor!";
 		move Lovely Cleaning Girl to East Wing Emergency Door;
 		now wet paint is clean.
@@ -684,60 +694,95 @@ Every turn when the NewPossessionCounter is greater than 30 and GhostInBasement 
 SECTION -- Aki
 
 SECTION -- ROOMS
- 
-Altgeld Hall Interior is a room. "[if unvisited]As soon as you enter the building, you feel much warmer. This building has a certain quality that makes it mysterious and its layout is very confusing. You see stairs as soon as you enter, as if you haven't already climbed enough of those. [end if]The walls are gray and the stairs are intimidating. You may go UP to the second floor or DOWN to the first floor."
- 
-First Floor is down from Altgeld Hall Interior. "[if unvisited]You arrive downstairs. [end if] Here you can see a drink vending machine. There are two hallways to the east and west - possibly more you cannot see because the structure of the building is just plain weird."
- 
-Altgeld Second Floor is up from Altgeld Hall Interior. "[if unvisited]The short flight of stairs brings you in front of the Math Library, on the second floor. [end if]A corridor stretches to the EAST. The library is to the SOUTH. The third floor (or at least part of it) is UP."
- 
-Math Library Lobby is south from Altgeld Second Floor. "The lobby feels quite eery, unlike most other libraries on campus. The stacks are to the SOUTH and the computer area is to the WEST."
- 
-Stacks is south of Math Library Lobby. "As expected, you find yourself surrounded by math books. Some of the titles make you dizzy just by looking at them. There is hardly any light in here. Perhaps Altgeld Hall was built with a theme in mind."
- 
-Computer Area is west of Math Library Lobby. "You see a few students using the computers and a few more working at the tables, but nothing really interesting seems to be happening."
- 
-Third Floor is up from Altgeld Second Floor. "You can see classrooms clustered around the square hallway, with a view of the math library lobby in the middle. In the corner you can see a pamphlet display. There is also a lounge to the NORTH."
- 
-Lounge is north of Third Floor. "There are several sofa chairs here that remind you of the dorms, with a fridge on one side. There are currently no students here."
- 
+  
+Altgeld Hall Entrance is a room. "[if unvisited]As soon as you enter the building, you feel much warmer. This building has a certain quality that makes it mysterious and its layout is very confusing. You see stairs as soon as you enter, as if you haven't already climbed enough of those. [end if]The walls are gray and the stairs are intimidating. You may go UP to the second floor or DOWN to the first floor.".
+  
+First Floor is down from Altgeld Hall Interior. "[if unvisited]You arrive downstairs. [end if] Here you can see a drink vending machine. There are two hallways to the east and west - possibly more you cannot see because the structure of the building is just plain weird.".
+  
+Second Floor is up from Altgeld Hall Interior. "[if unvisited]The short flight of stairs brings you in front of the Math Library, on the second floor. [end if]A corridor stretches to the EAST. The library is to the SOUTH. The third floor (or at least part of it) is UP.".
+  
+Math Library Lobby is south from Second Floor. "The lobby feels quite eery, unlike most other libraries on campus. The stacks are to the SOUTH and the computer area is to the WEST.".
+  
+Stacks is south of Math Library Lobby. "As expected, you find yourself surrounded by math books. Some of the titles make you dizzy just by looking at them. There is hardly any light in here. Perhaps Altgeld Hall was built with a theme in mind.".
+  
+Computer Area is west of Math Library Lobby. "You see a few students using the computers and a few more working at the tables, but nothing really interesting seems to be happening.".
+  
+Third Floor is up from Second Floor. "You can see classrooms clustered around the square hallway, with a view of the math library lobby in the middle. In the corner you can see a pamphlet display. Room 314 is to the SOUTH and a lounge lies to the NORTH. [Third Floor Shenanigans]".
+  
+Lounge is north of Third Floor. "There are several sofa chairs here that remind you of the dorms, with a fridge on one side. There are currently no students here.".
+  
+Room 314 is south of Third Floor. "It is the main classroom of Altgeld. A class is currently being taught here.".
+  
+Instead of going south when player is in Third Floor:
+	if studentsInClassroom is true:
+		say "It would be a bit odd to cross through a classroom like that.";
+		stop the action;
+	else:
+		continue the action.
+  
+SECTION -- VARIABLES
+  
+A thing can be examined or unexamined. A thing is usually unexamined.
+  
+Carry out examining something:
+	now the noun is examined.
+	  
+studentsInClassroom is a truth state variable. studentsInClassroom is true.
+  
+To say Third Floor Shenanigans:
+	if Room 314 is unvisited and timeInThirdFloor is 0:
+		say "There is a lot of noise coming from Room 314.";
+		stop the action;
+	if lounge is unvisited:
+		say "The smell of stale coffee drifts through the floor. It's probably coming from the lounge.";
+		stop the action.
+		  
+timeInThirdFloor is a number that varies. timeInThirdFloor is 0.
+		  
+Every turn when player is in Third Floor or player is in Lounge:
+	increase timeInThirdFloor by 1.
+			  
+Every turn when timeInThirdFloor is at least 10 and player is in Third Floor:
+	say "Suddenly there is an avalanche of students coming out of their classrooms. You try not to get swept up with the crowd. It is hard, but you manage.";
+	now timeInThirdFloor is 0.
+  
 SECTION -- GOING
  
-Instead of going inside when player is in Altgeld Second Floor:
+Instead of going inside when player is in Second Floor:
 	try going south;
 	stop the action.
  
 Instead of going nowhere when player is in Altgeld Hall Interior:
 	say "You try to go that way, but walk into a wall due to the structure of the room.".
-	 
+ 
 Instead of going nowhere when player is in Math Library Lobby:
 	say "You are, once again, face to face with a wall.".
-	 
+ 
 Instead of going nowhere when player is in First Floor:
 	say "There is nothing in that direction but a solid gray wall.".
-	 
-Instead of going nowhere when player is in Altgeld Second Floor:
+ 
+Instead of going nowhere when player is in Second Floor:
 	say "The winding hallways of the second floor confuse you and you walk into a wall."
-	 
+ 
 Instead of going nowhere when player is in Stacks:
 	say "You walk into a bookshelf. Ouch!".
  
 Instead of going nowhere when player is in Computer Area:
 	say "You tumble over a chair and almost crush a computer. Careful, or you'll have to pay for it.".
-	 
+ 
 SECTION -- OBJECTS
  
-Altgeld Vending Machine is an open container in First Floor. Altgeld Vending Machine is undescribed. Altgeld Vending Machine is scenery. The description of Altgeld vending machine is "It looks quite old and some of the paint is peeling off. From the machine, you can buy Cola, Diet Coke, Cherry Coke, Sprite, Lemonade, and Water.". Understand "vending machine" and "machine" and "drink machine" as Altgeld Vending Machine. 
- 
+Altgeld Vending Machine is an open container in First Floor. Altgeld Vending Machine is undescribed. Altgeld Vending Machine is scenery. The description of Altgeld vending machine is "It looks quite old and some of the paint is peeling off. From the machine, you can buy Cola, Diet Coke, Cherry Coke, Sprite, Lemonade, and Water.". Understand "machine" and "drink machine" as Altgeld Vending Machine. 
+  
 A thing is either drinkable or undrinkable. A thing is usually undrinkable.
 Soda is a kind of thing. Soda is drinkable.
- 
-Cola is a soda. Cola is in Altgeld Vending Machine. Cola is undescribed. Instead of buying [soda]:
+  
+Cola is a soda. Cola is in Vending Machine. Cola is undescribed. Instead of buying [soda]:
 	say "You buy the [noun]. Bye bye money.";
 	now player has the noun.
-	 
+	  
 The block drinking rule is not listed in the check drinking rulebook.
-	 
+	  
 Check drinking [soda]:
 	if noun is undrinkable:
 		say "You attempt to drink [the noun] without success. Maybe stick to drinking liquids.";
@@ -749,17 +794,17 @@ Carry out drinking:
 	if noun is soda and noun is carried by the player:
 		say "The [noun] quenched your thirst.";
 		now noun is nowhere.
-	 
-Sprite is a soda. Sprite is in Altgeld Vending Machine. Sprite is undescribed. 
-	 
+ 
+Sprite is a soda. Sprite is in Vending Machine. Sprite is undescribed. 
+ 
 Diet Coke is an undescribed soda in Altgeld Vending Machine.
-	 
+ 
 Cherry Coke is an undescribed soda in Altgeld Vending Machine.
-	 
+ 
 Water is an undescribed soda in Altgeld Vending Machine.
-	 
+ 
 Lemonade is an undescribed soda in Altgeld Vending Machine.
-	 
+ 
 Pamphlet display is a fixed in place supporter in Third Floor. Understand "display" as pamphlet display. Pamphlet display is undescribed. The description of pamphlet display is "It is a sort of shelf on which are various pamphlets and forms, including [list of things on pamphlet display].".
  
 A thing is either origamiable or unorigamiable. A thing is usually unorigamiable.
@@ -776,26 +821,26 @@ Math Department t-shirt is a wearable thing. player is wearing Math Department t
 Computer Table is a supporter in Computer Area. Computer Table is undescribed.
  
 Desktop is a switched on device on Computer Table. Desktop is scenery. The description of Desktop is "It is a new computer with a flatscreen monitor, yet it is not quite as new as the computers in the engineering side of campus. It suits your purposes quite well for the most part.". Understand "computer" as desktop.
- 
+  
 Instead of switching off desktop for the first time:
 	say "You press the black and red 'LOGOFF' button on the computer. A popup appears asking if you're sure you want to turn it off.".
-	 
+ 
 Instead of switching off desktop:
 	say "The computer briefly shows a blue screen with a loading circle before shutting off.";
 	now desktop is switched off.
-	 
+	  
 Instead of switching on desktop when desktop is switched off:
 	say "You wait for several minutes as the computer boots up. Finally, you are greeted with the familiar image of Altgeld Hall on the screen, and you log in.";
 	now desktop is switched on.
-	 
+  
 Suspicious donut is a thing on Computer Table. "[if computer area is unvisited]You are not sure why there is a half-eaten donut here, especially considering that food is not allowed in the library.[else]The disgusting donut is still here.". The description of Suspicious donut is "The donut has strawberry frosting and sprinkles, but it is on the sticky, disgusting table.".
  
 Instead of eating Suspicious donut:
 	say "A putrid smell overwhelms you as you bring the donut near your mouth, and you cannot bring yourself to eat it. You put down the donut, but now your hand is sticky. Ew.";
 	stop the action.
-	 
+ 
 Understand "donut" and "disgusting donut" and "doughnut" and "suspicious doughnut" and "disgusting doughnut" as suspicious donut.
-	 
+ 
 Fridge is a closed openable container in Lounge. Fridge is scenery. The description of Fridge is "You hear your stomach growl. Surely no one will notice one food item is missing, right?".
  
 Cheese sandwich is an edible thing in Fridge. The description of cheese sandwich is "It doesn't look stale yet, and, more importantly, it doesn't have a name on it.".
@@ -803,7 +848,7 @@ Cheese sandwich is an edible thing in Fridge. The description of cheese sandwich
 Instead of eating cheese sandwich:
 	say "You are sure the sandwich would have tasted better if it was warm, but you make do with what you have.";
 	now cheese sandwich is nowhere.
-	 
+ 
 Understand "sandwich" as cheese sandwich.
  
 SECTION -- SYNONYMS
@@ -818,12 +863,12 @@ SickBeats is an action applying to nothing.
 Understand "drop some sick beats" and "drop some beats" and "drop beats" and "drop sick beats" as SickBeats.
  
 Carry out SickBeats:
-	   say “You have a great voice but unfortunately no one is around to hear your sick beats.”;
-		stop the action.
-  
+	say “You have a great voice but unfortunately no one is around to hear your sick beats.”;
+	stop the action.
+ 
 Instead of SickBeats when player is in math library lobby or player is in stacks or player is in computer area:
-	   say “You attempt to drop some beats but you get glares from the students trying to study. Perhaps you should do it somewhere else.".
-	 
+	say “You attempt to drop some beats but you get glares from the students trying to study. Perhaps you should do it somewhere else.".
+ 
 Origami is an action applying to one thing.
  
 Understand "make origami with [something]" and "fold shapes with [something]" as origami.
@@ -835,30 +880,70 @@ Check Origami:
 Carry out Origami:
 	say "You fold [the noun] into a beautiful butterfly and it flies out of your hand and out the window.";
 	now the noun is nowhere.
-	 
+
+SquirrelFeeding is an action applying to one carried thing and one thing.
+ 
+understand "feed [things] to [something]" as SquirrelFeeding.
+ 
+Check SquirrelFeeding:
+	if second noun is not a squirrel:
+		if second noun is a person:
+			say "The [second noun] looks at you confusedly and slowly backs away.";
+			stop the action;
+		else:
+			say "It looks like the [second noun] does not want to be fed, considering it is inanimate and does not have a mouth.";
+			stop the action;
+	else if noun is inedible:
+		say "You cannot feed that to the [second noun].";
+		stop the action.
+ 
+Carry out SquirrelFeeding:
+	if player is not carrying the noun:
+		say "You can't feed the [second noun] what you don't have.";
+		stop the action;
+	else:
+		say "You feed the [noun] to the [second noun].";
+		now the noun is nowhere.
+ 
+Interrogating it about is an action applying to two visible things. 
+Understand "ask [someone] about [any thing]" and "ask [someone] for [any thing]" and "talk to [someone] about [any thing]" as interrogating it about. 
+ 
+Check Interrogating it about:
+	if noun is not a person:
+		say "You won't get any useful repsonses from asking the [noun] about anything.";
+		stop the action.
+ 
+Carry out Interrogating it about:
+	say "You ask the [noun] about the [second noun], but nothing of importance comes up from the conversation.".
+ 
 SECTION -- CREATURES
  
-Altgeld student is an undescribed person in Computer Area. Understand "students" and "student" as Altgeld student. The description of Altgeld student is "A student is sitting at one of the old wooden tables, nose-deep in a book, with a notebook open beside them. You cannot understand what the book says, but you assume it is math related. They have headphones on, signaling they do not want to talk to you."
+Henry Admin student is an undescribed person in Computer Area. Understand "students" and "student" as Henry Admin student when player is in Computer Area. The description of student is "A student is sitting at one of the old wooden tables, nose-deep in a book, with a notebook open beside them. You cannot understand what the book says, but you assume it is math related. They have headphones on, signaling they do not want to talk to you."
  
-Instead of giving something to Altgeld student:
+Instead of giving something to Henry Admin student:
 	say "The student is not interested in what you have to offer.";
 	stop the action.
-	 
-Instead of talking to Altgeld student:
+ 
+Instead of talking to Henry Admin student:
 	say "They cannot hear you.";
 	stop the action.
-	 
-Instead of asking Altgeld student about something:
-	try talking to Altgeld student;
+ 
+Instead of asking Henry Admin student about something:
+	try talking to student;
 	stop the action.
-	 
-Instead of attacking Altgeld student:
+ 
+Instead of attacking Henry Admin student:
 	say "It would do you no good to cause a ruckus in the library.";
 	stop the action.
  
 access is a truth state that varies. access is false.
  
-librarian is an undescribed person in math library lobby. The description of librarian is "The librarian is doing something on the computer. You cannot see what as it is facing away from you."
+librarian is an person in math library lobby. The description of librarian is "The librarian is doing something on the computer. You cannot see what as the screen is facing away from you. The librarian is wearing [list of things worn by librarian].".
+ 
+loose black sweater is a wearable thing. librarian is wearing loose black sweater.
+blue jeans is a wearable thing. librarian is wearing blue jeans.
+square glasses is a wearable thing. librarian is wearing square glasses.
+white vans is a wearable thing. librarian is wearing white vans.
  
 Instead of going south when player is in math library lobby:
 	if access is false:
@@ -876,20 +961,50 @@ Instead of giving something to librarian:
 	else:
 		say "The librarian gives you a confused look. She does not know why you are giving [the noun] to her.";
 		stop the action.
-		 
+ 
 Instead of talking to librarian:
 	say "While she would love to talk to you, the librarian has work to do.";
 	stop the action.
-	 
+ 
 Instead of asking librarian about something:
 	say "She is busy right now.";
 	stop the action.
-	 
+ 
 Instead of attacking librarian:
 	say "Why the heck would you want to attack an innocent librarian?";
 	stop the action.
-	 
-squirrel is an animal in stacks. "There is a squirrel on the top of one of the bookshelves.". The description of squirrel is "It looks just like the squirrels found all over the rest of campus. You find it strange that there would be one inside the library though.".
+ 
+A squirrel is a kind of animal. A squirrel can be brown or gray. A squirrel can be small or large. A squirrel is usually brown and large.
+ 
+stacks squirrel is an animal in stacks. "There is a squirrel on the top of one of the bookshelves.". The description of stacks squirrel is "It looks just like the squirrels found all over the rest of campus. You find it strange that there would be one inside the library though.". 
+ 
+Understand "squirrel" as stacks squirrel. 
+ 
+SECTION -- RANDOM EVENTS
+ 
+RandomEvent is a number that varies. RandomEvent is 3.
+ 
+Every turn when a random chance of 1 in 100 succeeds:
+	choose row RandomEvent in the Table of RandomEvents;
+	if RandomEvent is greater than 0:
+		say "[event entry]";
+		stop the action;
+	else:
+		now RandomEvent is 3.
+ 
+Table of RandomEvents
+event
+"You hear a particularly strong gust of wind shaking the trees outside."
+"The lights flicker ominously."
+"You hear a heavy book fall in the distance."
+ 
+Instead of interrogating librarian about an item listed in the Table of Questions:
+	say "[reply entry][paragraph break]".
+ 
+Table of Questions
+Item	reply
+stacks squirrel	"She doesn't have any problem with the squirrel being here, unless it starts damaging the books."
+computer	"'Is there a problem with it?'"
 
 SECTION -- Nick
    
