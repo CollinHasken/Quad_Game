@@ -476,14 +476,13 @@ SECTION -- Emma
 
 The English Building Entrance is a room. "[If unvisited]Entering the English Building, you feel the age of the rooms and halls before you. The scent of old papers and leftover ink permeates your entire being and you examine your options. [end if] Standing in the entrance, you can either go OUT to the Main Quad, to the Basement by going DOWN, UP to the Advising Office, or WEST to the Classrooms."
   
-English Basement is down from the English Building Entrance. "[If unvisited] The basement stretches out before you. Students gather in the central area, studying or eating. Everyone seems rather busy. An abandoned soda bottle sits on one of the tables. Vending machines stand near the bathrooms. You sense a foreboding presence. You feel like you can't breathe, but you can't seem to place why. [end if] Standing in the center of the basement, you can go NORTH to the Bathrooms or UP to the English Building Entrance. "
+Basement is down from the English Building Entrance. "[If unvisited] The basement stretches out before you. Students gather in the central area, studying or eating. Everyone seems rather busy. An abandoned soda bottle sits on one of the tables. Vending machines stand near the bathrooms. You sense a foreboding presence. You feel like you can't breathe, but you can't seem to place why. [end if] Standing in the center of the basement, you can go NORTH to the Bathrooms or UP to the English Building Entrance. "
   
-Bathroom is north from the English Basement. "[if unvisited] The foreboding feeling that greeted you as you descended into the basement grows stronger as you go into the bathroom. [end if] There's a filthy light switch to your right. A strange figure floats in near a wall. The struggle to breathe continues to oppress you. You should probably go back SOUTH to the Basement. But, what's this? A small alcove to the WEST? Maybe you could check it out."
+Bathroom is north from the Basement. "[if unvisited] The foreboding feeling that greeted you as you descended into the basement grows stronger as you go into the bathroom. [end if] There's a filthy light switch to your right. A strange figure floats in near a wall. The struggle to breathe continues to oppress you. You should probably go back SOUTH to the Basement. But, what's this? A small alcove to the WEST? Maybe you could check it out."
   
 Classrooms is west of the English Building Entrance. "[If unvisited] The bell rings, feeling louder than a normal bell. Students mill out of the room and you enter. [end if] A teacher is writing something on the chalkboard. Desks are scattered about after a class. There doesn't seem to be much else in here. You can go EAST to the English Building Entrance."
   
 Advising Office is up from the English Building Entrance. "[if unvisited] Walking in, you can see comfy seats and candy open for everyone who enters. [end if] There's three offices, but the doors are all closed. You can go DOWN to the English Building Entrance."
- 
   
 SECTION -- Going Nowhere 
   
@@ -505,14 +504,13 @@ SECTION -- Items
   
 Old papers is a thing in the English Building Entrance. The description of Old papers is "They seem to talk about the history of the building. Most of the words are faded, but 'ghosts' and 'drown' are visible."
  
-English Vending machine is a supporter in the English Basement. The description of English vending machine is "The vending machine that was once full of candy now only has an old key residing within. It'll take a quarter to get it."
+Vending machine is a supporter in the Basement. The description of vending machine is "The vending machine that was once full of candy now only has an old key residing within. It'll take a quarter to get it."
   
-English Vending machine is scenery.
-Understand "Vending machine" as English vending machine.
+Vending machine is scenery.
  
-English Desks is a supporter in the Classrooms. The description of the English desks is "The desk seems to be vacant from the last class. All of the previous occupant's belongings are gone, but there is a bag on the surface."
-Understand "desks" as english desks.
-
+English Desks is a supporter in the Classrooms. The description of the desks is "The desk seems to be vacant from the last class. All of the previous occupant's belongings are gone, but there is a bag on the surface."
+Understand "desks" as English Desks.
+  
 Bag is a closed openable container in the Classrooms. The bag is scenery.
 The description of the bag is "The bag feels like there are two things inside of it."
   
@@ -550,10 +548,10 @@ Instead of eating the candy:
 	say "Ah, that certainly hit the spot. You've never had a candy that tasted like ink before! Though, what's that empty feeling growing in your stomach? Ah. It must be the wind or something else clichéd."
 	Now the candy is nowhere.
 	  
-Instead of taking the English students:
+Instead of taking the students:
 	say "How rude that you'd interrupt a hard working student! Leave them be, they're stressed enough as it is!"
 	  
-Instead of examining English vending machine:
+Instead of examining vending machine:
 	if player has quarter: 
 		say "Huzzah, a key came out of the vending machine! Too bad they're out of actual food.";       
 	else:
@@ -562,8 +560,15 @@ Instead of examining English vending machine:
 Instead of drinking the candy:
 	say "I know the candy's been sitting out for a while, but that certainly doesn't mean it's been liquified. Why not EAT it instead?"
  
-Instead of taking the English vending machine:
+Instead of taking the vending machine:
 	say "Look, I know you think you're really strong and all, but this thing is bolted to the ground, pal. It ain't budging."
+	 
+Instead of taking the ghost:
+	say "Who you gonna call?";
+	end the story saying "GHOSTBUSTERS"
+ 
+Instead of talking to the ghost:
+	say "The ghost stares at you, staring through you... Examining you up and down, almost considering you... She smiles... You should leave her be."
 	 
 Section -- Actions
  
@@ -574,7 +579,7 @@ Understand "chucking [something]" as throwing it at.
 Understand "steal [something]" as taking
  
 A thing can be untakeable or takeable.
-English Vending machine is untakeable. 
+Vending machine is untakeable. 
  
 Check taking:
 	if noun is untakeable: 
@@ -596,10 +601,9 @@ teacher is a person in classrooms. "The teacher is writing something down about 
  
 understand "man" as teacher.
  
-English students are people. 
-English students are people in the English basement. 
-The description of English students is "Testing is in full swing. They seem to be bogged down by the stresses of life itself and their eyes seem lifeless."
-Understand "students" as English students.
+students are people. 
+students are people in the basement. 
+The description of students is "Testing is in full swing. They seem to be bogged down by the stresses of life itself and their eyes seem lifeless."
  
 understand "figure" and "floaty thing" as ghost.
 The printed name of a ghost is "The ghost".     
@@ -607,7 +611,7 @@ The printed name of a ghost is "The ghost".
 Instead of talking to teacher:
 	say "The teacher is furiously writing down notes for his next class. Who knew there was enough demand for a class on ghosts? Maybe if you asked a specific question, he could give you a solid answer?"
  
-Instead of talking to English students:
+Instead of talking to students:
 	say "They're busy studying. How would you like it if someone bothered you while studying? One dismissively grumbles about the 'stupid teacher who talks about ghosts'."
  
 Instead of talking to [something]:
@@ -628,7 +632,6 @@ Instead of asking teacher about "ghost":
 Instead of giving Old papers to teacher:
 	say "The teacher looks at the papers and marvels at the page. 'Oh, I remember this page. It was from an old ghost story I used to read all of the time. Keep it, you might like to find the rest of the story!' You should probably listen to him.";
 	stop the action. 
- 
 		 
 Instead of giving candy to teacher: 
 	say "He shakes his head. 'No thanks, I don't want that inexplicably regenerating candy. Something about that gives me the creeps, like the god that rules over this building has yet to figure out how eating candy works.' Maybe you should keep it until you figure out how it disappears.";
@@ -690,7 +693,7 @@ Every turn when NewPossessionCounter is greater than 10 and GhostInBasement is f
 Every turn when the NewPossessionCounter is greater than 30 and GhostInBasement is true:
 	say "Something no longer feels right. Your heart beats... beats....... stops. Something... Something evil fills your lifeless body. That something laughs, the sound coming from your own lips. You are no longer in control.";
 	end the story saying "You've been possessed!".
-	
+		
 SECTION -- Aki
 
 SECTION -- ROOMS
@@ -777,7 +780,7 @@ Altgeld Vending Machine is an open container in First Floor. Altgeld Vending Mac
 A thing is either drinkable or undrinkable. A thing is usually undrinkable.
 Soda is a kind of thing. Soda is drinkable.
   
-Cola is a soda. Cola is in Vending Machine. Cola is undescribed. Instead of buying [soda]:
+Cola is a soda. Cola is in Altged Vending Machine. Cola is undescribed. Instead of buying [soda]:
 	say "You buy the [noun]. Bye bye money.";
 	now player has the noun.
 	  
@@ -795,7 +798,7 @@ Carry out drinking:
 		say "The [noun] quenched your thirst.";
 		now noun is nowhere.
  
-Sprite is a soda. Sprite is in Vending Machine. Sprite is undescribed. 
+Sprite is a soda. Sprite is in Altgeld Vending Machine. Sprite is undescribed. 
  
 Diet Coke is an undescribed soda in Altgeld Vending Machine.
  
