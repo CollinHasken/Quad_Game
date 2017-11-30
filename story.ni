@@ -23,17 +23,15 @@ Joint Space is east from Lincoln Hall Entrance.
 SECTION -- Charles
 
 Henry Administration Building Entrance is a room. “[if unvisited] As you open the door and walk through the entrance hall, you would feel peace and calm separated from the Illini Terminal’s crowd outside. Then you are faced with 3-separated walkways; there are front, west wing and east wing. As you are facing a room of University Student Financial Services & Cashier Operation, you notice, there are two students wandering around finding their classes. It seems to be a tough first day of school for some freshmen.”
-University Student Financial SaC is a room.
-University Student Financial SaC is north of Henry Administration Building Entrance. “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile. You may want to think of another time visiting this place, maybe not on the first day of semester.”
-University Student Financial SaC has printed name "University Student Financial Services & Cashier Operation".
-West Wing is west of Henry Administration Building Entrance. “It is 10:50 and people are rushing out and in between classes, as some of them have to get into another class. You would have love the enthusiasm showed on the first day, a fresh start of the semester!”
-East Wing is east of Henry Administration Building Entrance. “More and more classes are located in this square-shaped building. It seems to be an efficient building for classes. The building doesn’t take a lot of spaces and still can manage to create many decent-sized rooms. People are sitting through the hall waiting for their turn getting into the classrooms. [if wet paint is appealing]Watchout![else]The East Wing is crowded with many students waiting for classes. You should be careful of wet paint and evil mopping boy. You can also EXIT the building from here.".
+University Student Financial Services & Cashier Operation is north of Henry Administration Building Entrance. “The room looks old and sophisticated. It is packed with people. There are 3 long lines of people waiting to get a financial consultation or making payments. The cashier patiently serves the students with smile and candies! You may want to think of another time visiting this place, maybe not on the first day of semester.”
+West Wing is west of Henry Administration Building Entrance. “It is 10:50 and people are rushing out and in between classes, as some of them have to get into another class. You would have love the enthusiasm showed on the first day, a fresh start of the semester! Students love hanging around the west wing because there are dogs here! [paragraph break] People loves to talk about the mystery of Old Painting hung on the west wing.”
+East Wing is east of Henry Administration Building Entrance. “More and more classes are located in this square-shaped building. It seems to be an efficient building for classes. The building doesn’t take a lot of spaces and still can manage to create many decent-sized rooms. People are sitting through the hall waiting for their turn getting into the classrooms. You can see a donation box here. [if wet paint is appealing]Watchout! Remember to DONATE! [else] [paragraph break] The East Wing is crowded with many students waiting for classes. You should be careful of wet paint and evil mopping boy in the Emergency Door. You should go outside to visit the Emergency Door."
  
 SECTION -- Going Nowhere
  
 Instead of going nowhere when the player is in Henry Administration Building Entrance:
 say “If you are looking for classes, you may not want to go straight. You should go WEST or EAST wing. There are where the classes are located.”
-Instead of going nowhere when the player is in University Student Financial SaC:
+Instead of going nowhere when the player is in University Student Financial Services & Cashier Operation:
 say “You shouldn’t be here if you don’t have any financial consultation or payments to be made. You are just making it worse! You probably should go EAST or WEST to the wings.”
 Instead of going nowhere when the player is in West Wing:
 say “Since there are a lot of people rushing in and out, you might want to stand aside and wait until everything cools down. Try to listen to music or drink some water, you want to stay hydrated! You can always explore the building by going EAST.”
@@ -42,10 +40,10 @@ say “Look for people who are leaving their chairs and grab one of those. Your 
  
 SECTION -- THINGS
  
-Wooden desks are scenery in the University Student Financial SaC.
+Wooden desks are scenery in the University Student Financial Services & Cashier Operation.
 The description of the wooden desks is "The desks stand out the most as you are facing it most of the time when you are in line These desks are placed next to the long line of people. Every financial consultant would use these desks when serving the students."
 Understand “desk” and “desks” as Wooden desks.
-A computer is a device in the University Student Financial SaC. “The sound of keyboard typing and the bright lights from computer’s monitor fill the atmosphere”.
+A computer is a device in the University Student Financial Services & Cashier Operation. “The sound of keyboard typing and the bright lights from computer’s monitor fill the atmosphere”.
 The computer is fixed in place.
 The description of the computer is “Computer is an essential device for one’s office. It may seem too common device but you would feel their presence when they are not around. So, don’t ever think to omit the presence of computer.”
 Understand “device” and “comp” and “computers” as computer.
@@ -56,7 +54,7 @@ A trash bin is a container in the West Wing.
 The trash bin is scenery.
 The description of the trash bin is “It is the most useful container as it prevents the hall from all trashes.”
 Understand “bin” and “trash can” as trash bin.
-Candies are edible thing in the University Student Financial SaC.
+Candies are edible thing in the University Student Financial Services & Cashier Operation.
 The description of Candies is “You can take some candies while waiting in line for consultation. Don’t mind your diet, you deserve it!”
 Understand “candy” and “sweets” as candies.
 The player is wearing an orange U of I t-shirt.
@@ -64,6 +62,9 @@ The description of orange U of I t-shirt is “You are wearing this orange U of 
 Tablet Key to Success is supporter in the East Wing.
 The description of the tablet of key to success is "It is the secret to 4.0 GPA."
 Understand "tablet" and "key to success" as tablet of key to success.
+Old Painting is a scenery in the West Wing.
+The description of the Old Painting is "The painting contains dark evil power in it. You will regret if you ever try to take the painting!"
+Understand "painting" as Old Painting.
  
 Section -- INTERACTION
  
@@ -81,11 +82,8 @@ Stop the action.
 Instead of taking hanging chairs:
 Say “Those chairs are too big and you are not strong enough to carry it!”;
 Stop the action.
-Instead of switching on trash bin:
+Instead of examining trash bin:
 Say “Please make sure you are not throwing your personal belongings.”;
-Now trash bin is switched on.
-Instead of switching off trash bin:
-Say “Someone behind you may have something to throw, don’t close it!”;
 Stop the action.
 Instead of eating candies:
 Say “You are hungry and these sweets can fill you stomach a bit”;
@@ -93,6 +91,9 @@ Now candies is nowhere.
 Instead of taking U of I t-shirt:
 Say “Those are someone else’s t-shirt, don’t steal!”;
 Stop the action. 
+Instead of taking Old Painting:
+Say "You should not take the Old Painting away! [paragraph break]YOU NOW SHOULD GIVE WHAT THE EVIL PAINTER WANTS, YOU HAVE 5 TURNS BEFORE HE COMES! GOODLUCK!";
+The Evil Painter Comes in 5 turns from now.
  
 Section -- Actions
  
@@ -219,7 +220,6 @@ GeorgeOnShift is false.
   
 Every turn when GeorgePatrolCounter is greater than 5 and GeorgeOnShift is false:
 	say "George is accountable for school safety. However, he has an OCD (Obsessive-Compulsive Disorder), he would put everything in place with the right order. As he walks through the East Wing, one student forgot to close the trash bin. George then run and close the trash bin.";
-	now trash bin is switched off;
 	now Security Guard is in East Wing;
 	now GeorgeOnShift is true.
 	  
@@ -233,7 +233,7 @@ A thing can be repulsive or appealing or nasty or safe. A thing is usually repul
 The wet paint is a scenery in East Wing Emergency Door.
 The wet paint is repulsive.
   
-Understand "acrylic" and "dye" and "color" and "wax" as paint.
+Understand "acrylic" and "dye" and "color" and "wax" as wet paint.
  
 To say Don't touch the wet paint:
 	if wet paint is repulsive:
@@ -247,7 +247,7 @@ To say Don't touch the wet paint:
 	else:
 		say "You don't have any better choices. You should GO IN. ";
 			  
-The description of East Wing Emergency Door is "[if wet paint is repulsive]You want to go downstairs but the lift takes too much time. Emergency Door has a stair than can lead you there. You can go IN to the East Wing Emergency Door from here.[paragraph break] A wet paint caution reminds you to be careful.[else if wet paint is appealing]You are curious and you accidentally slipped to the wet paint.[else if wet paint is nasty]Your plain shirt is now coloured and you need to pay the damage you had caused.[else]You don't have any better choices. You should GO IN. [Don't touch the wet paint]".
+The description of East Wing Emergency Door is "[if wet paint is repulsive]You want to go downstairs but the lift takes too much time. Emergency Door has a stair than can lead you there. You can also go back IN to the East Wing.[paragraph break] A wet paint caution reminds you to be careful.[else if wet paint is appealing]You are curious and you accidentally slipped to the wet paint.[else if wet paint is nasty]Your plain shirt is now coloured and you need to pay the damage you had caused.[else]You don't have any better choices. You should GO IN. [Don't touch the wet paint]".
  
 A thing can be examined or unexamined. A thing is usually unexamined.
  
@@ -266,10 +266,10 @@ Instead of examining wet paint:
 		say "You can safely go through the stairs now."
 	 
 At the time when The Evil Mopping Boy Comes:
-	say "The floor is slippery and you may slipped to the wet paint!";
+	say "The floor is slippery and you are slipped!";
 	if player is in East Wing Emergency Door:
 		end the story finally saying "You have slipped into the wet paint and your dirty shirt has made you no longer belong inside the building. ";
-	if player is in Henry Administration Building Entrance or player is in University Student Financial SaC or player is in West Wing:
+	if player is in Henry Administration Building Entrance or player is in University Student Financial Services & Cashier Operation or player is in West Wing:
 		say "There are no wet paint in these rooms and you are safe from the dirt! Eventhough you are not safe from the wet floor!";
 		move Lovely Cleaning Girl to East Wing Emergency Door;
 		now wet paint is clean.
@@ -330,64 +330,41 @@ Instead of taking plastic stick:
 The printed name of East Wing is "Henry Administration Building East Wing".
  
 A DonationBox is a kind of container. a DonationBox is usually open and openable.
-A DonationBox can be ForBoy or ForGirl. A DonationBox is usually ForBoy.
  
 EastWingDonation is a scenery DonationBox in East Wing.
-EastWingDonation is ForBoy.
-The printed name of EastWingDonation is "Donate to remove the evil mopping boy from East Wing!".
+ 
+The description of EastWingDonation is "Donate to remove the evil mopping boy from East Wing!".
 Understand "donation" and "box" and "donationbox" as EastWingDonation.
  
-A thing can be Undonatable or Donatable. A thing is usually Donatable.
+A thing can be Undonatable or Donatable. A thing is usually undonatable.
  
-shiny chocolate are a donatable thing in EastWingDonation. "The evil boy loves chocolate so much, you should feed him with sweets."
-The printed name of shiny chocolate is "there is nothing better than the pure sweet dark chocolate".
+shiny chocolate is a donatable thing.
+The description of the shiny chocolate is "The evil boy loves chocolate so much, you should feed him by donating it to the box.".
 understand "choco" and "coco" as shiny chocolate.
- 
+the Player is carrying a shiny chocolate.
 instead of taking shiny chocolate:
-	say "You can also donate with other kind of sweets."
+	say "You can also donate with other kind of sweets but not candies."
 	 
-biscuit is donatable.
- 
 the Player is carrying a bottle of milkshake.
-the description of a bottle of milkshake is "You prepared this for your lunch."
+the description of a bottle of milkshake is "You prepared this for your lunch.".
+a bottle of milkshake is a donatable thing.
  
-an ice cream is a donatable thing in EastWingDonation.
-The description of an ice cream is "Everybody loves ice cream for dessert."
+an ice cream is a donatable thing.
+The description of an ice cream is "Everybody loves ice cream for dessert.".
+understand "icecream" and "ice" as ice cream.
+the Player is carrying an ice cream.
  
-Instead of inserting something into ForBoy DonationBox:
-	if noun is donatable:
-		say "You want to eat the [noun], but you remember the mess the evil boy has been making.";
-	else:
+Check inserting something into DonationBox:
+	if noun is undonatable:
 		say "Throw it or eat it";
-		now noun is in second noun.
-	 
-Instead of inserting something into a ForGirl DonationBox:
+		stop the action.
+ 
+Carry out inserting something into DonationBox:
 	if noun is donatable:
-		say "You can donate to the boy to kick him from East Wing.";
-		now noun is in second noun;
-	else:
-		say "You can just donate to the girl or consume it for yourself."
-		 
-Check examining a DonationBox:
-	say "You can't steal the sweets in the box. You will have to do sweets trading first.";
-	stop the action.
+		say "You wanted to eat the [noun] so bad, but you are thankful that he is now gone.";
+		now wet paint is clean.
+		now [noun] is nowhere.
 	 
-Check searching a DonationBox:
-	say "You can't steal the sweets in the box. You will have to do sweets trading first.";
-	stop the action.
- 
-SweetsTrading is an action applying to nothing. Understand "trade" and "sweetstrade" and "trading" as SweetsTrading.
- 
-Carry out SweetsTrading:
-	Repeat with R running through DonationBox in the location:
-		say "You hunt around in [R] and see [if the number of things in R is not 0][a list of things in R]. [else]nothing is here.";
-		if R contains ice cream:
-			say "You finally found something to donate.";
-			now player has ice cream.
-			 
-Instead of searching a DonationBox:
-	try SweetsTrading;
-	stop the action.
 	 
 Section -- Table
  
@@ -395,39 +372,53 @@ A person can be PaintAttacked or PaintFree.
 A person is usually PaintFree.
   
 Evil Painter is a scenery person in West Wing. 
-The description of Evil Painter is "The painter doesn't like to be seen"
+The description of Evil Painter is "The painter doesn't like to be seen and he wants candies!"
   
 At the time when Evil Painter comes:
+	say "THE PAINTER HAS PULLED YOU CLOSER TO HIM. YOU ARE IN TROUBLE! TRY TO ESCAPE!";
 	now player is in West Wing;
-	say "You are in trouble! Try to escape!";
-	now Evil Painter is nowhere;
-	now player is PaintAttacked.
+	now player is PaintAttacked;
+	say "ESCAPE NOW!";
  
 Table of Evil Painter
 attack
-"Excuse me, you supposed to not be around here."
+"THIS IS YOUR LAST WARNING!"
 "GO OUT THIS IS MY ZONE"
-"You think you are tough? Try to not slipped into this wet paint!"
-"This is my painting shift!"
+"YOU THINK YOU ARE TOUGH? TRY TO NOT SLIPPED INTO THIS WET PAINT!"
+"THIS IS MY PAINTING SHIFT!"
   
 Instead of going nowhere when player is in West Wing:
 	say "You can run but you can't hide."
   
-GivePainterSweets is a truth state variable.
-GivePainterSweets is false.
+GivePainterCandies is a truth state variable.
+GivePainterCandies is false.
   
 PainterDangerLevel is a number that varies.
 PainterDangerLevel is 4.
+ 
+CandiesDonating is an action applying to one visible thing. 
+Understand "donate [something]" and "donating [something]"  and "give [something]" as CandiesDonating.
+ 
+Check CandiesDonating [something]:
+	if noun is not candies:
+		say "Please donate candies";
+		stop the action.
+				 
+Carry out CandiesDonating [something]:
+	if noun is candies:
+		say "Thankyou! Evil Painter loved it!";
+		now player is PaintFree.
+		now [noun] is nowhere.
   
 Every turn when player is PaintAttacked:
 	choose row PainterDangerLevel in the Table of Evil Painter;
 	if PainterDangerLevel is greater than 0:
-		say "[attack entry] You have [PainterDangerLevel] turns to run from the evil painter.[paragraph break]";
+		say "[attack entry] You have [PainterDangerLevel] turns to run from the evil painter or give what he wants!.[paragraph break]";
 		decrease PainterDangerLevel by 1;
 		stop the action;
 	else:
 		end the story finally saying "You have failed to escape from the Evil Painter.";
-	if GivePainterSweets is true:
+	if GivePainterCandies is true:
 		say "You have finally found what he has been looking for! You can now escape from him.";
 		now player is in Henry Administration Building Entrance;
 		now player is PaintFree;
@@ -436,14 +427,22 @@ Every turn when player is PaintAttacked:
 		end the story.
   
 Instead of giving candies to Evil Painter:
-	say "You should remember that everyone loves sweets and you can share that happiness.";
-	now GivePainterSweets is true;
+	say "You should remember that everyone loves candies and you can share that happiness.";
+	now GivePainterCandies is true;
 	now PainterDangerLevel is 0;
 	now Evil Painter is nowhere;
   
 Interrogating about is an action applying to two visible things.
  
 Understand "ask [something] about [something]" as interrogating about.  
+ 
+Check Interrogating about [something]:
+	if noun is not a person:
+		say "They can't talk!";
+		stop the action.
+ 
+Carry out Interrogating about:
+	say "You ask the [noun] out of your curiosity."
   
 Instead of Interrogating [something] about Tablet Key to Success:
 	choose a random row in the Table of Tablet Key to Success;
@@ -458,7 +457,6 @@ comment
   
 Every turn when player is in West Wing:
 	say "Don't mess around with Evil Painter";
-	Evil Painter Comes in two turns from now;
  
 Every turn when player is in Henry Administration Building Entrance:
 	if a random chance of 1 in 10 succeeds:
@@ -1014,70 +1012,75 @@ SECTION -- Nick
 Illini Union Bookstore is a room. "[if unvisited]You open the door and slip inside from the cramped foyer. The faint yet sharp fragrance of espresso, presumably from the Starbucks on the east wall, is immediately evident. However, when you swing your wandering eyes to the right in order to trace the source of the scent, you see that the stand has been almost completely demolished. Bizarre claw marks stretch across the surfaces of table tops flung from their legs while the front counter and signage sit in pieces on the floor, torn apart by the same... creature. You quickly notice that this isn't the only thing out of the ordinary about the bookstore today.[end if]
 This place is usually filled with students, but it is entirely empty save for an older woman combing through the merchandise toward the west wall. She doesn't look too threatening.
 Whatever remains of the Starbucks lies to the EAST. Amazon@Illinois can be found at the wall to the WEST. You can head either UP or DOWN the open stairwell to the Second Floor and Basement respectively. You could also go back OUT to the Entrance to the Illini Union Bookstore."
-   
-Bookstore Second Floor is up from Illini Union Bookstore. "Sure enough, this part of the building is devoid of life, too. Many of the larger, hardcover books, normally found neatly lined along the shelves, are strewn about the floor. A few are missing pages if the haphazard tears and scrap paper are any indication.
+	 
+Union Second Floor is up from Illini Union Bookstore. "Sure enough, this part of the building is devoid of life, too. Many of the larger, hardcover books, normally found neatly lined along the shelves, are strewn about the floor. A few are missing pages if the haphazard tears and scrap paper are any indication.
 There's not much else to see here, though. You can go back DOWN to the main floor."
-   
-Bookstore Basement is down from Illini Union Bookstore. "Small spatters of what look like blood, as well as even more claw marks, adorn the staircase winding down into the basement. It might not necessarily be dangerous to explore further, but it seems the basement lights have all been shut off, and the darkness is unnaturally intense despite the light of the first floor reaching the stairs.
+	 
+BookstoreBasement is down from Illini Union Bookstore. "[if player is wearing construction helmet]Thanks to the light on your helmet, you're able to see farther than a foot in front of you. Most of the shelves have been toppled, stacked in such a way that you're left with only one narrow path leading to the nearest back corner. Blood and claw marks continue on the floor along the way and lead up to... a dog? A small Doberman, slightly trembling and staring right back at you.
+ 
+You could approach the dog or head back UP the stairs.
+ 
+[else]Small spatters of what look like blood, as well as even more claw marks, adorn the staircase winding down into the basement. It might not necessarily be dangerous to explore further, but it seems the basement lights have all been shut off, and the darkness is unnaturally intense despite the light of the first floor reaching the stairs.
 Without a light, you can only head back UP for now."
-   
+Printed name of BookstoreBasement is "Basement".
+	 
 Ruins of Starbucks is east from the Illini Union Bookstore. "[if unvisited]You take a moment to remember the many cups of coffee and tea enjoyed here. What a waste.[end if] 
 Judging by the scale of the destruction, someone or something was clearly very angry with their messed-up order. Most of the tables and chairs as well as much of the counter are destroyed, but maybe there's something worth checking out here. You can also spot some ants crawling through the place.
 You can only turn back WEST to the main floor."
-   
+	 
 Amazon@Illinois is west from the Illini Union Bookstore. "The wall is covered almost entirely by lockers for people to retrieve their packages. It looks straightforward enough.
 You can go EAST to the main floor."
-   
-   
+	 
+	 
 SECTION -- Going Nowhere
-   
+	 
 Instead of going nowhere when the player is in Illini Union Bookstore: 
 say "It seems impossible to get lost in such an open space, but you wouldn't put it past yourself. Best to look at the signs and stick to places you know are in here."
-   
-Instead of going nowhere when the player is in Bookstore Second Floor: 
+	 
+Instead of going nowhere when the player is in Union Second Floor: 
 say "All these ruined randomly ruined books are seriously giving you the creeps. Nobody appears to be up here with you, and none of the other sections look to be worth checking out. Maybe you should head back DOWN."
-   
-Instead of going nowhere when the player is in Bookstore Basement: 
+	 
+Instead of going nowhere when the player is in BookstoreBasement: 
 say "For some strange reason, it's just too dark to see anything past the foot of the stairs. You should walk back UP and find something to light the way."
-   
+	 
 Instead of going nowhere when the player is in Amazon@Illinois: 
 say "Nothing interesting is around here, and there's nowhere to go but back EAST to the main floor."
-   
+	 
 Instead of going nowhere when the player is in Ruins of Starbucks:
 say "What if whoever or whatever tore this place apart is still lurking around here? Wouldn't wanna be caught. Going back WEST is a better idea."
- 
+  
 SECTION -- Variables
- 
-Use Scoring.
- 
+   
+Use Scoring. [REDUNDANT - TO BE REMOVED]
+   
 TakenHelmet is a truth state variable.
 TakenHelmet is false.
- 
+   
 TakenRadar is a truth state variable.
 TakenRadar is false.
- 
+   
 Before taking construction helmet:
 	if TakenHelmet is false:
 		increase score by 100;
 		now TakenHelmet is true.
-		 
+		   
 Before taking small radar:
 	if TakenRadar is false:
 		increase score by 100;
 		now TakenRadar is true.
- 
+   
 PulseState is a truth state variable.
 PulseState is false.
- 
+   
 TakenCake is a truth state variable.
 TakenCake is false.
- 
+   
 Every turn when the time of day is 12:00 PM:
 	say “You glance at your phone and notice it's already noon. Maybe it's time for lunch.”
-	 
+	   
 Every turn when the turn count is 5:
 	say “You think you hear a notification from your phone, but there's nothing new when you pull it out to check.”
- 
+   
 ScreamingGuyCounter is a number variable. ScreamingGuyCounter is 0.
 Every turn when player is in Illini Union Bookstore:
 	increment ScreamingGuyCounter. 
@@ -1085,37 +1088,53 @@ Before examining something when player is in Ruins of Starbucks:
 	increase ScreamingGuyCounter by 1. 
 Before switching on something when player is in Ruins of Starbucks:
 	increase ScreamingGuyCounter by 1. 
-	 
+	   
 Every turn when ScreamingGuyCounter is greater than 15
 and PulseState is true:
 	say "You hear a loud shriek from somewhere between the shelves and racks.";
 	now Creepily Quiet Guy is nowhere.
- 
+   
+CrumbsCounter is a number variable. CrumbsCounter is 4.
+  
+Every turn when player is in the Ruins of Starbucks:
+	choose row CrumbsCounter in the Table of Crumbs;
+	if CrumbsCounter is greater than 0: 
+		say "[description entry]";
+		decrease CrumbsCounter by 1;
+		stop the action.
+	  
+Table of Crumbs
+description
+"You can't see any crumbs."
+"There are still a few crumbs around."
+"Some of the crumbs are gone."
+"There are crumbs all around."
+  
 Every turn when turn count is 10
 and TakenCake is true:
 	say "You barely hear the busy old lady's wispy voice from the other side of the store. 'Hope my coffee cake is still there.'";
- 
+   
 SECTION -- Actions
- 
+   
 Understand “consume [something]" as eating.
-   
+	 
 Understand “abandon [something]" as dropping.
+	 
+A thing can be stable or unstable or wobbling or falling or fallen.  A thing is usually stable.
    
-A thing can be stable or unstable or wobbling or fallen.  A thing is usually stable.
- 
-A thing can be examined or unexamined. A thing is usually unexamined.
- 
+A thing can be examined or unexamined. A thing is usually unexamined. [REDUNDANT - TO BE REMOVED]
+   
 A thing can be detectable or undetectable.  A thing is usually undetectable. 
- 
+   
 A cache is a kind of container.
 A cache is usually open and openable.
- 
-Carry out examining something: 
+   
+Carry out examining something: [REDUNDANT - TO BE REMOVED]
 	now the noun is examined.
- 
+   
 A thing can be kickable or unkickable. A thing is usually unkickable.
 The blue rubber ball is kickable.
-   
+  
 Kicking is an action applying to one thing.
 Understand "kick [something]" and "punt [something]" as kicking.
 Check kicking:
@@ -1124,19 +1143,19 @@ Check kicking:
 		stop the action.
 Carry out kicking:
 	say "You kick [noun], but it has little effect.";
-	   
+		 
 Backflipping is an action applying to nothing.
 Understand “do backflip“and “do a backflip” and “flip” and "backflip" as backflipping.
 Carry out backflipping:
 	say “You plant your feet and bend your knees before taking a deep breath. With full belief in yourself, you simultaenously jump and lean. The world spins around you for a moment before it rumbles back into place in your eyes. You did a backflip for some reason.”;
 	stop the action.
-	 
+	   
 Resting is an action applying to nothing.
 Understand "rest" and "take a rest" and “nap“and “snooze” as resting.
 Carry out resting:
 	say “You find the nearest, most comfortable-looking section of the ground and doze off. A few hours pass.”;
 	increase the time of day by 3 hours.
-	 
+	   
 Scanning is an action applying to nothing.
 Understand "scan" as scanning.
 Carry out Scanning:
@@ -1146,22 +1165,23 @@ Carry out Scanning:
 	If Small Radar is switched off:
 		say "You should probably have some kind of scanning device turned on.";
 		stop the action.
-	 
+	   
 Check examining lockers:
 	say "Nothing really out of the ordinary here.";
 	stop the action.
- 
-SECTION -- Items
- 
-A Starbucks table is a supporter in the Ruins of Starbucks. "A single tall table somehow remains mostly untouched amidst the wreckage. Looks like there's some stuff still on it."
-The description of the Starbucks table is "You look more closely at the table, expecting something equally as strange as whatever tore through here, but there's only a few used napkins, a wet straw, a nasty-looking sandwich, and a strange little pastry box.[if slice of coffee cake is in the preserved pastry box] The box gives off a sweet scent.[else] Unfortunately, you can't smell the coffee cake anymore."
-Understand "stand" and "table" as Starbucks table.
    
-A preserved pastry box is a closed openable container on the table.
+SECTION -- Items
+   
+A starbuckstable is a supporter in the Ruins of Starbucks. "A single tall table somehow remains mostly untouched amidst the wreckage. Looks like there's some stuff still on it."
+The description of the starbuckstable is "You look more closely at the table, expecting something equally as strange as whatever tore through here, but there's only a few used napkins, a wet straw, a nasty-looking sandwich, and a strange little pastry box.[if slice of coffee cake is in the preserved pastry box] The box gives off a sweet scent.[else] Unfortunately, you can't smell the coffee cake anymore."
+Understand "stand" and "table" and "tall table" as starbuckstable.
+Printed name of starbuckstable is "table".
+	 
+A preserved pastry box is a closed openable container on the starbuckstable.
 The preserved pastry box is scenery. 
 The description of the preserved pastry box is "It's pink like bubblegum and appears almost untouched save for a dollop of white icing on one corner of the lid. You could open or close it with little effort."
 Understand "box” and "pastry box" as preserved pastry box.
-   
+	 
 A slice of coffee cake is an edible thing in the preserved pastry box.
 The description of coffee cake is "A perfectly even slice of rich coffee cake. It still looks pretty good, actually. You wonder how old it is."
 Understand "cake" and "coffee cake" as slice of coffee cake.
@@ -1172,26 +1192,23 @@ Instead of taking slice of coffee cake:
 Instead of eating slice of coffee cake: 
 	   say "Unable to resist, you scarf the coffee cake down, leaving crumbs and icing over your face. Worth it. You wipe your mouth and continue on."; 
 	now coffee cake is nowhere.
-   
-A old sandwich is an edible thing on the table.
-The old sandwich is scenery.
-The description of old sandwich is "Among the crumpled napkins is an old-looking sandwich. Mold is beginning to grow over the side."
-Understand "sandwich" as old sandwich.
-Instead of taking the old sandwich:
-	   say “You briefly entertain the thought of taking the sandwich, but there's little use for it now that it's become so vile."
+	 
+A old sandwich is an edible thing in Ruins of Starbucks. "An old, nasty-looking sandwich sticks out like a sore thumb in the food display at the front."
+The description of old sandwich is "Mold is beginning to grow over the side. You wonder where the other food from the display case went."
+Understand "sandwich" and "old-looking sandwich" as old sandwich.
 Instead of eating the old sandwich:
 	   say "You wouldn't eat this even if it was the last bit of food on Earth. Yuck.";
 	   stop the action.
-   
+	 
 A wheeled toolbox is a supporter in the Ruins of Starbucks. "A stray, unmarked toolbox on wheels is parked not far from the scraps of the old cafe. A few trinkets dangle from the sides while a column of silver handles running down the center mark the various drawers."
 The description of the wheeled toolbox is "The potentially helpful tools on the sides are secured under heavy duty locks. All but one lower drawer are also locked inward, visibly immovable."
 Understand "toolbox" and "tools" as wheeled toolbox.
- 
+   
 A lower drawer is a closed openable container on the wheeled toolbox.
 The lower drawer is scenery. 
 The description of the lower drawer is "The one unlocked drawer on the whole piece. It's apparently fairly deep, maybe able to fit a few sizable boxes and some spare clothing."
 Understand "drawer” and "bottom drawer" as lower drawer.
-   
+	 
 A blue rubber ball is a thing in the Ruins of Starbucks.
 The description of blue rubber ball is "A simple, unmarked blue rubber ball. You probably shouldn't kick it. Then again, what's the harm?"
 Blue rubber ball is fixed in place.
@@ -1199,14 +1216,14 @@ Understand "ball" and "rubber ball" as blue rubber ball.
 Instead of kicking blue rubber ball:
 	say "You take a step back, then skip forward before delivering a swift blow with your dominant foot. The ball sails for a while until it crashes into a far-off bookcase. Didn't seem to do much.";
 	now blue rubber ball is nowhere.
-   
+	 
 A construction helmet is a wearable thing in the lower drawer.
-The description of construction helmet is "A sturdy, white construction helmet. Useful for keeping your noggin safe from the occasional bump."
+The description of construction helmet is "A sturdy, white construction helmet. Useful for keeping your noggin safe from the occasional bump. It also happens to have a nifty flashlight on top for seeing in the dark."
 Understand "helmet" and "hat" and "construction hat" as construction helmet.
 Instead of taking construction helmet: 
 	   say "This could be useful, either for you or someone else."; 
 	   now player has construction helmet. 
-   
+	 
 A mysterious blinking gadget is a switched off device in the lower drawer.
 The mysterious blinking gadget is fixed in place.
 The description of mysterious blinking gadget is "Some sort of hi-tech construction instrument, almost like a smartphone but large and mounted on the side of the drawer. While there are a bunch of different gauges, meters, and even a small touchscreen[if switched on] spewing all sorts of data at you[end if], it's difficult to ascertain its intended purpose. There is a large, red power switch on the side. Or at least you believe it's a power switch."
@@ -1219,7 +1236,7 @@ Instead of switching off mysterious blinking gadget:
 	say "You flip the big red switch on the side and stand back just in case something goes amiss. Fortunately again, nothing out of the ordinary happens. The displays flicker, then go dark, and the lights suddenly stop.";
 	now the mysterious blinking gadget is switched off;
 	now PulseState is false.
-	 
+	   
 A small radar is a switched off device in the lower drawer.
 The description of small radar is "Some kind of bizarre radar device with just one button on its face and a dim screen to show you... something. You're not sure what its purpose is, but you could try scanning places with it."
 Understand "radar" and "scanner" as small radar.
@@ -1232,49 +1249,62 @@ Instead of switching on small radar:
 Instead of switching off small radar:
 	say "You poke the button and put the radar away.";
 	now the small radar is switched off;
- 
+   
 A giant pile of unchecked packages is a stable thing in Amazon@Illinois. "A giant pile of unchecked packages is next to you[if fallen], scattered from the tumble they took.[end if]. It looks like these have been here for a while."
+A giant pile of unchecked packages is fixed in place.
 Understand "pile of packages" and "huge pile" and "giant pile" and "pile" and "packages" and "boxes" and "cargo" as giant pile of unchecked packages.
 Instead of examining giant pile of unchecked packages:
 	if giant pile of unchecked packages is stable:
-		say "The packages look like they'll stand. For now.";
-		The Pile Falls in two turns from now;
+		choose a random row in the Table of PackageDescriptions;
+		say "[description entry] The packages look like they'll stand. For now.";
+		The Pile Falls in three turns from now;
 		now the giant pile of unchecked packages is unstable;
 		stop the action;
 	if giant pile of unchecked packages is unstable:
-		say "Now the pile is swaying slightly. Not good.";
-		now the giant pile of unchecked packages is wobbling;
+		choose a random row in the Table of PackageDescriptions;
+		say "[description entry] Now the pile is swaying slightly. Not good.";
+		now the giant pile of unchecked packages is falling;
 		stop the action;
-	if giant pile of unchecked packages is wobbling:
-		say "The packages are slowly shifting. You don't think they'll come down, but you don't want to be around to find out.“;
+	if giant pile of unchecked packages is falling:
+		choose a random row in the Table of PackageDescriptions;
+		say "Run!“;
 		stop the action.
 At the time when The Pile Falls:
 	say "The pile of packages is collapsing!";
 	now giant pile of unchecked packages is fallen; 
 	if player is in Amazon@Illinois:
 		end the story finally saying "You've discovered your doom beneath the countless online orders of a large university population. Maybe you should have kept away.";
-	if player is in Illini Union Bookstore or player is in Ruins of Starbucks or player is in Bookstore Second Floor or player is in Bookstore Basement: 
+	if player is in Illini Union Bookstore or player is in Ruins of Starbucks or player is in Union Second Floor or player is in BookstoreBasement: 
 		say "You hear the pile of boxes near the lockers finally collapse. Good thing you weren't anywhere near 'em!";
- 
+   
 lockers are a cache in Amazon@Illinois.
 lockers are scenery.
- 
+   
 A sparkling crystal is a thing in lockers.
 The description of sparkling crystal is "A shiny gem that was hidden in the back of one of the lockers at the Illinois@Amazon site. You wonder why you couldn't spot it before."
-	  
-SECTION -- People
+Understand "crystal" and "gem" as sparkling crystal.
   
-Creepily Quiet Guy is a person in Illini Union Bookstore. "Wandering between the shelves and racks is a random middle-aged man. His movements are strangely stiff, and his face is kinda blank. [Creepy Hints] You could probably approach him anyway."
+Table of PackageDescriptions
+description
+"You think you can spot a friend's name on a label."
+"Is that one for your professor? It looks absurdly long."
+"Looks like someone got some new shoes."
+"Lots and lots of textbooks. Ugh."
+"Some of these look beaten and crumpled beyond recognition."
+		
+SECTION -- People
+	
+Creepily Quiet Guy is a person in Illini Union Bookstore. "Wandering between the shelves and racks is a random middle-aged man. His movements are strangely stiff, and his face is kinda blank. [Creepy Hints]You could probably approach him anyway."
 The description of Random Guy is "Wearing a plain, dark blue polo, khaki pants, and white sneakers, this person seems relatively unthreatening."
 Understand "Stranger" and "Guy" and "Man" and "Middle-Aged Man" as Creepily Quiet Guy. 
- 
+   
 Creepily Quiet Guy is wearing a polo shirt. 
 The description of a polo is "It's dark blue and mostly blank."
 Understand "polo" as polo shirt.
- 
+   
 Creepily Quiet Guy is wearing moccasins.
 The description of moccasins is "Somewhat worn, but otherwise decent quality. Those shoes have been places."
- 
+   
 To say Creepy Hints:
 	if preserved pastry box is closed:
 		say "He seems to be miming something: one flat palm facing upward, he looks as if he's pulling a lid open with the other hand. He's facing east.";
@@ -1287,79 +1317,132 @@ To say Creepy Hints:
 		stop the action;
 	else: 
 		say "He's breathing pretty heavily, but nothing looks wrong.'"
-   
+	 
 Little Old Lady is a person in Illini Union Bookstore.
 The description of Little Old Lady is "There's a short, older woman rummaging through some of the available merchandise. She looks pretty focused."
 Understand "woman" and "girl" and "old lady" and "lady" and "granny" and "grandma" as Little Old Lady.  
 Little Old Lady is scenery.
-   
+	 
 Some ants are scenery animals.
 Some ants are in the Ruins of Starbucks. 
 The description of some ants is "A long line of ants trek from one side of the old stand to the other, carrying various crumbs and other bits."
 Understand "bugs" and "ant" as ants.
-   
+
 Instead of talking to Creepily Quiet Guy:
 	say "The tall, plain man is almost like a statue. He doesn't say anything back to you, and it barely looks like he's even breathing. Maybe ask him about something specific?"
-	   
+		 
 Instead of talking to little old lady:
 	say "She's much too focused on finding something to listen to you. Better leave her alone for now."
-   
+	 
 Instead of talking to [something]:
 	say "You speak clearly, wait for a response, then rethink your approach as you realize you probably won't get a response."
-   
-Instead of asking Creepily Quiet Guy about "helmet":
-	say "He grits his teeth, then points to his head as he brings the back of his other hand to his brow. He flexes and spreads his fingers, as though he's telling you that something should be flaring outward from his head. It almost looks like a gesture for some kind of light."
-Instead of asking Creepily Quiet Guy about "toolbox": 
-	say "The plain guy simply shrugs. He doesn't have a clue what that was there for, either."
+	 
+Instead of interrogating Creepily Quiet Guy about an item listed in the Table of Creepy Responses: 
+	   say "[reply entry][paragraph break]". 
+  
+Table of Creepy Responses 
+Item	reply 
+helmet	"He grits his teeth, then points to his head as he brings the back of his other hand to his brow. He flexes and spreads his fingers, as though he's telling you that something should be flaring outward from his head. It almost looks like a gesture for some kind of light."
+toolbox	"The plain guy simply shrugs. He doesn't have a clue what that was there for, either."
+giant pile of unchecked packages	"He recoils as if he was afraid of them. Odd."
+slice of coffee cake	"He rubs his belly with a satisfied smile."
+Creepily Quiet Guy	"He goes cross-eyed for a second, then shakes his head and returns to his normal robotic self."
+  
 Instead of asking Creepily Quiet Guy about something:
 	say "No real response. Oh, well."
+  
 Instead of examining Creepily Quiet Guy:
 	say "He is wearing [a list of things worn by Creepily Quiet Guy].“
-	 
+	   
 Instead of asking Little Old Lady about something:
 	say "Looks like she doesn't really have time for questions."
-   
+	 
 Instead of asking some ants about something:
 	say "They probably couldn't tell you anything useful."
-  
+	
 Instead of giving a slice of coffee cake to Creepily Quiet Guy: 
 	say "The man shakes his head and waves you off, apparently uninterested. He instead points to you and nods with a creepy smile. You suppose it was meant for you, then.";
 	stop the action.
-   
+	 
 Instead of giving something to Creepily Quiet Guy:
 		say "The man doesn't move as you offer the item. Insisting he have it, you simply place the gift at his feet. Suddenly, a loud clap behind you draws your attention, and you turn around to investigate. When you turn back, not having seen the source of the sound, you realize the item has vanished.";
 		now Creepily Quiet Guy has the noun;
 		stop the action.
-		  
+			
 Instead of giving something to Little Old Lady:
 		say "She shakes her head and goes back to her search.";
 		now Creepily Quiet Guy has the noun;
 		stop the action.
-		  
+			
 Instead of giving something to some ants:
 		say "You don't think they'd be too appreciative of anything you could hand over.";
 		now Creepily Quiet Guy has the noun;
 		stop the action.
-   
+	 
 Instead of attacking some ants:
 	say "You raise your foot, ready to squish some ants, but you realize you'd rather not get your shoes dirty. This is probably someone else's job anyway.";
 	stop the action.
-   
+	 
 Instead of attacking Creepily Quiet Guy:
 	say "What did he ever do to you?";
 	stop the action;    
-   
+	 
 Instead of attacking Little Old Lady: 
 	say "The little old lady briefly glances toward you. You couldn't possibly hurt an old-timer.";
 	stop the action;
-   
-Instead of attacking something: 
+	 
+Instead of attacking something:
 	say "Your feeble strikes don't accomplish much."
+	  
+SECTION -- Random Events
+  
+Every turn when player is in Ruins of Starbucks:
+	if a random chance of 1 in 10 succeeds: 
+		say "You imagine holding a cup of cold brew in your hands and die a little inside.";
+		  
+Every turn when player is in BookstoreBasement:
+	if a random chance of 1 in 20 succeeds:
+		say "A brief, sharp shriek nearly bursts your eardrums. That couldn't have been from a person.";
+ 
+SECTION -- Doggo
+ 
+Doberman is a scenery animal.
+Doberman is in BookstoreBasement.
+The description of Doberman is "The dog is shaking, probably because it's either cold or hungry down in this dark place. Its eyes seem to glow with a disturbing, unnatural crimson color. You figure it probably would have moved by now if it wanted to: it doesn't look hurt or scared. Maybe you could give it something to draw it out."
+Understand "dog" and "doge" and "doggo" and "puppy" and "mutt" as Doberman.
+ 
+Instead of giving construction helmet to Doberman:
+	say "As cute as it might look on him, you probably shouldn't give the dog your only source of light.";
+	stop the action;
+	 
+Instead of giving old sandwich to Doberman:
+	end the story finally saying "The dog walks up and curiously sniffs the sandwich in your hand. It looks up to you with its blood red eyes as if to ask permission, then back down to scan the sandwich some more. You nod and urge him to eat by bringing it closer to his face. The dog suddenly swipes it up with his tongue and noms it all in one bite.
+Suddenly, you're blown back by an inexplicable gust of chilling wind. Your helmet light is knocked out upon landing, and while you struggle to turn it back on, you can hear the dog whimper and howl in seemingly unbearable pain. As you manage to flick the light back on, though, you find that the mangy Doberman has disappeared, leaving behind a terrifying amount of shed fur where it once was in the corner. Though the cramped patch is surrounded on all sides by trashed shelves, you look around to see if he might have fled somewhere. 
+ 
+You turn back toward the stairs. To your horror, you're greeted by a rhino-sized, wolf-like behemoth of a beast that looks especially hungry as it snarls at you with enormous fangs. Before you have time to react, though, it lunges at you with its gaping maw the split second before your flashlight gives out.
+ 
+YOU ARE DEAD.";
+ 
+Instead of giving slice of coffee cake to Doberman:
+	end the story finally saying "The dog walks up and curiously sniffs the coffee cake in your hand. It looks up to you with its blood red eyes as if to ask permission, then back down to scan the slice some more. You nod and urge him to eat by bringing it closer to his face. The dog suddenly swipes it up with his tongue and noms it all in one bite.
+Suddenly, you're blown back by an inexplicable gust of hot steam. Your helmet light is knocked out upon landing, and while you struggle to turn it back on, you can hear the dog whimper and howl in seemingly unbearable pain. As you manage to flick the light back on, though, you find that the mangy Doberman has disappeared, leaving behind a terrifying amount of shed fur where it once was in the corner. Though the cramped path is surrounded on all sides by trashed shelves, you look around to see if he might have fled somewhere. 
+ 
+You turn back toward the stairs. To your horror, you're greeted by a rhino-sized, wolf-like behemoth of a beast that looks especially hungry as it snarls at you with enormous fangs. Before you have time to react, though, it lunges at you with its gaping maw the split second before your flashlight gives out.
+ 
+YOU ARE DEAD.";
+ 
+Instead of giving sparkling crystal to Doberman:
+	increase score by 1000;
+	end the story finally saying "The dog walks up and curiously sniffs the sparkling crystal in your hand. It looks up to you with its blood red eyes as if to ask permission, then back down to scan the slice some more. You nod and urge him to take it by bringing it closer to his face. The dog suddenly bites down on it.
+Suddenly, you're blown back by an inexplicable whirlwind of sparkling dust. Your helmet light is knocked out upon landing, and while you struggle to turn it back on, you can hear the dog bark and howl. As you manage to flick the light back on, though, you find that the mangy Doberman has disappeared, leaving behind a blue rubber ball where it once was in the corner. Though the cramped path is surrounded on all sides by trashed shelves, you look around to see if he might have fled somewhere. 
+ 
+You turn back toward the stairs. To your surprise, the Doberman is standing at the foot of the steps with his tongue hanging from his mouth, his tail happily wagging behind him. You follow his lead back up to the main floor and watch as he scampers out the front doors.
+ 
+That's enough weirdness for one day.";
 
 SECTION -- Collin
 
 SECTION -- Room Declarations
-   
    
 Lincoln Hall Entrance is a room. "[if unvisited]As you walk into the entrance, an ominous aura hangs in the air. The room is devoid of any life, and yet you feel as though every move you make is being meticulously watched. Your eyes land upon a bust of Abraham Lincoln, his nose tarnished from students rubbing it in hopes for good luck. You think twice about rubbing it yourself when you notice the bust's eyes are following you. The cold, dead eyes give you feeling to get out of the building. There is a large grandfather clock near the stairs heading UP to the second floor, or hallways lined with classrooms going NORTH and SOUTH with vending machines.[else]The Lincoln bust is still perched near the grandfather clock on the staircase heading UP to the second floor, with its metallic eyes following you as you enter the room. You hear monotone professors lecturing students trying to stay awake in the classrooms through the empty hallway, except from a few vending machines, from both the NORTH and SOUTH directions. Your eyes drift towards the entrance doors heading out to the quad as you wonder why you'd waste your time outside of class."
    
